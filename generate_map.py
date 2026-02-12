@@ -479,13 +479,13 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
 
         cat_label = CAT_LABELS.get(r["category"], "Other")
 
-        # description = summary text + photo image
+        # description = summary text, then photo as <img> on its own line
         desc_parts = []
         if r.get("summary"):
-            desc_parts.append(esc(r["summary"]))
+            desc_parts.append(f'<p>{esc(r["summary"])}</p>')
         if r.get("photo_url"):
             desc_parts.append(f'<img src="{esc(r["photo_url"])}" width="300" />')
-        description = "<br/>".join(desc_parts) if desc_parts else ""
+        description = "\n".join(desc_parts)
 
         lines.append("<Placemark>")
         lines.append(f"  <name>{esc(r['name'])}</name>")
