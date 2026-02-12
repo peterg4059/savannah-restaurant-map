@@ -436,37 +436,24 @@ if (allCoords.length) {{
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     """Generate a KML file for import into Google My Maps."""
 
-    # Google My Maps compatible icons from the gstatic icon set
-    # These are the actual icons used by Google My Maps internally
+    # Simple small colored dot icons -- no gradients, clean look
     KML_STYLES = {
         "restaurant": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
-            "color": "ff1427C6",  # red (AABBGGRR)
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            "scale": 0.8,
         },
         "bar": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
-            "color": "ffC06515",  # dark blue
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            "scale": 0.8,
         },
         "rooftop": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
-            "color": "ffA79700",  # teal
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
+            "scale": 0.8,
         },
         "other": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
-            "color": "ff327D2E",  # green
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+            "scale": 0.8,
         },
-    }
-
-    # Use recognizable Google Earth icons for each type
-    ICON_URLS = {
-        "restaurant": "http://maps.google.com/mapfiles/kml/shapes/dining.png",
-        "bar":        "http://maps.google.com/mapfiles/kml/shapes/bars.png",
-        "rooftop":    "http://maps.google.com/mapfiles/kml/shapes/bars.png",
-        "other":      "http://maps.google.com/mapfiles/kml/shapes/grocery.png",
     }
 
     def esc(text: str) -> str:
@@ -486,15 +473,16 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         '<description>Auto-generated from Google Sheets</description>',
     ]
 
-    # Define styles with distinct icons per category
+    # Define styles with small icons + visible name labels
     for cat_key, style in KML_STYLES.items():
-        icon_url = ICON_URLS[cat_key]
         lines.append(f'<Style id="style_{cat_key}">')
         lines.append('  <IconStyle>')
-        lines.append(f'    <color>{style["color"]}</color>')
         lines.append(f'    <scale>{style["scale"]}</scale>')
-        lines.append(f'    <Icon><href>{icon_url}</href></Icon>')
+        lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
         lines.append('  </IconStyle>')
+        lines.append('  <LabelStyle>')
+        lines.append('    <scale>0.75</scale>')
+        lines.append('  </LabelStyle>')
         lines.append('  <BalloonStyle>')
         lines.append('    <text><![CDATA[$[description]]]></text>')
         lines.append('  </BalloonStyle>')
@@ -518,52 +506,26 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
                 + urllib.parse.quote(r["address"])
             )
 
-            # Build rich HTML description for the info bubble
+            # Build description -- summary first so it's visible on
+            # mobile Google Maps without scrolling past the photo
             desc_parts = []
 
-            # Photo at the top
-            if r.get("photo_url"):
-                desc_parts.append(
-                    f'<div style="margin-bottom:8px;">'
-                    f'<img src="{esc(r["photo_url"])}" '
-                    f'style="width:100%;max-width:320px;border-radius:8px;" />'
-                    f'</div>'
-                )
-
-            # Type badge
+            # Type (plain text, mobile-friendly)
             if r.get("type"):
-                cat_colors = {
-                    "restaurant": "#C62828", "bar": "#1565C0",
-                    "rooftop": "#0097A7", "other": "#2E7D32",
-                }
-                badge_color = cat_colors.get(r.get("category", "other"), "#666")
-                desc_parts.append(
-                    f'<div style="display:inline-block;background:{badge_color};'
-                    f'color:white;padding:2px 10px;border-radius:12px;'
-                    f'font-size:12px;font-weight:bold;margin-bottom:8px;">'
-                    f'{esc(r["type"])}</div>'
-                )
+                desc_parts.append(f'<b>{esc(r["type"])}</b><br/>')
 
-            # Summary
+            # Summary -- FIRST so it shows on mobile
             if r.get("summary"):
-                desc_parts.append(
-                    f'<div style="font-size:14px;color:#333;line-height:1.5;'
-                    f'margin-bottom:10px;">{esc(r["summary"])}</div>'
-                )
+                desc_parts.append(f'<p>{esc(r["summary"])}</p>')
 
             # Address
-            desc_parts.append(
-                f'<div style="font-size:12px;color:#888;margin-bottom:8px;">'
-                f'{esc(r["address"])}</div>'
-            )
+            desc_parts.append(f'<p>{esc(r["address"])}</p>')
 
-            # Navigation link
-            desc_parts.append(
-                f'<a href="{esc(gmaps_url)}" style="display:inline-block;'
-                f'background:#1a73e8;color:white;padding:8px 16px;'
-                f'border-radius:8px;text-decoration:none;font-size:13px;'
-                f'font-weight:bold;">Navigate</a>'
-            )
+            # Photo after text content
+            if r.get("photo_url"):
+                desc_parts.append(
+                    f'<img src="{esc(r["photo_url"])}" width="300" />'
+                )
 
             description = "\n".join(desc_parts)
 
