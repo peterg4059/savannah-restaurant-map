@@ -436,28 +436,24 @@ if (allCoords.length) {{
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     """Generate a KML file for import into Google My Maps."""
 
-    # Google v2 Place Icons (modern, clean)
-    # Restaurant = fork/knife, Bar/Rooftop = cocktail glass, Other = convenience store
+    # Pre-colored Google paddle pins -- these reliably render in
+    # both My Maps web AND the Google Maps iOS/Android app
     KML_STYLES = {
         "restaurant": {
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.png",
-            "color": "ff0000C6",  # red (KML = aabbggrr)
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/kml/paddle/red-blank.png",
+            "scale": 0.7,
         },
         "bar": {
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.png",
-            "color": "ffC06515",  # dark blue
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",
+            "scale": 0.7,
         },
         "rooftop": {
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.png",
-            "color": "ffA79700",  # teal
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/kml/paddle/ltblu-blank.png",
+            "scale": 0.7,
         },
         "other": {
-            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/convenience_pinlet.png",
-            "color": "ff327D2E",  # green
-            "scale": 1.0,
+            "icon": "http://maps.google.com/mapfiles/kml/paddle/grn-blank.png",
+            "scale": 0.7,
         },
     }
 
@@ -478,11 +474,10 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         '<description>Auto-generated from Google Sheets</description>',
     ]
 
-    # Define styles with colored icons
+    # Define styles (no color tint needed -- icons are pre-colored)
     for cat_key, style in KML_STYLES.items():
         lines.append(f'<Style id="style_{cat_key}">')
         lines.append('  <IconStyle>')
-        lines.append(f'    <color>{style["color"]}</color>')
         lines.append(f'    <scale>{style["scale"]}</scale>')
         lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
         lines.append('  </IconStyle>')
