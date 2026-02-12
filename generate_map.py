@@ -433,10 +433,102 @@ if (allCoords.length) {{
     print(f"Generated {out_path} with {len(restaurants)} markers.")
 
 
+def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
+    """Generate a KML file for import into Google My Maps."""
+
+    # Google My Maps icon colors (using standard palette names)
+    KML_STYLES = {
+        "restaurant": {"color": "ff2828c6", "icon": "http://maps.google.com/mapfiles/kml/paddle/red-circle.png"},
+        "bar":        {"color": "ffc06515", "icon": "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png"},
+        "rooftop":    {"color": "ffa79700", "icon": "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png"},
+        "other":      {"color": "ff327d2e", "icon": "http://maps.google.com/mapfiles/kml/paddle/grn-circle.png"},
+    }
+
+    def esc(text: str) -> str:
+        """Escape XML special characters."""
+        return (text
+                .replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace('"', "&quot;")
+                .replace("'", "&apos;"))
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<kml xmlns="http://www.opengis.net/kml/2.2">',
+        '<Document>',
+        '<name>Savannah Restaurants &amp; Bars</name>',
+        '<description>Auto-generated from Google Sheets</description>',
+    ]
+
+    # Define styles
+    for cat_key, style in KML_STYLES.items():
+        label = CATEGORIES[cat_key][0]
+        lines.append(f'<Style id="style_{cat_key}">')
+        lines.append('  <IconStyle>')
+        lines.append(f'    <color>{style["color"]}</color>')
+        lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
+        lines.append('  </IconStyle>')
+        lines.append('</Style>')
+
+    # Group restaurants by category into folders
+    by_cat = {}
+    for r in restaurants:
+        by_cat.setdefault(r["category"], []).append(r)
+
+    for cat_key in ["restaurant", "bar", "rooftop", "other"]:
+        items = by_cat.get(cat_key, [])
+        if not items:
+            continue
+        label = CATEGORIES[cat_key][0]
+        lines.append(f'<Folder><name>{esc(label)} ({len(items)})</name>')
+
+        for r in items:
+            gmaps_url = (
+                "https://www.google.com/maps/search/?api=1&query="
+                + urllib.parse.quote(r["address"])
+            )
+
+            desc_parts = []
+            if r.get("type"):
+                desc_parts.append(f"<b>{esc(r['type'])}</b>")
+            if r.get("summary"):
+                desc_parts.append(f"<p>{esc(r['summary'])}</p>")
+            if r.get("photo_url"):
+                desc_parts.append(
+                    f'<img src="{esc(r["photo_url"])}" width="300" />'
+                )
+            desc_parts.append(f"<p>{esc(r['address'])}</p>")
+            desc_parts.append(
+                f'<a href="{esc(gmaps_url)}">Open in Google Maps</a>'
+            )
+            description = "\n".join(desc_parts)
+
+            lines.append("<Placemark>")
+            lines.append(f"  <name>{esc(r['name'])}</name>")
+            lines.append(f"  <description><![CDATA[{description}]]></description>")
+            lines.append(f'  <styleUrl>#style_{r["category"]}</styleUrl>')
+            lines.append("  <Point>")
+            lines.append(f"    <coordinates>{r['lng']},{r['lat']},0</coordinates>")
+            lines.append("  </Point>")
+            lines.append("</Placemark>")
+
+        lines.append("</Folder>")
+
+    lines.append("</Document>")
+    lines.append("</kml>")
+
+    out_path = os.path.join(os.path.dirname(__file__) or ".", output_path)
+    with open(out_path, "w") as f:
+        f.write("\n".join(lines))
+    print(f"Generated {out_path} with {len(restaurants)} placemarks.")
+
+
 def main():
     restaurants = fetch_sheet_data()
     restaurants = geocode_restaurants(restaurants)
     generate_html(restaurants)
+    generate_kml(restaurants)
 
 
 if __name__ == "__main__":

@@ -36,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html geocode_cache.json
+          git add index.html map.kml geocode_cache.json
           git diff --cached --quiet || git commit -m "Auto-update restaurant map $(date -u +%Y-%m-%d)"
           git push

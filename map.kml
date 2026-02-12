@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Savannah Restaurants &amp; Bars</name>
+<description>Auto-generated from Google Sheets</description>
+<Style id="style_restaurant">
+  <IconStyle>
+    <color>ff2828c6</color>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon>
+  </IconStyle>
+</Style>
+<Style id="style_bar">
+  <IconStyle>
+    <color>ffc06515</color>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href></Icon>
+  </IconStyle>
+</Style>
+<Style id="style_rooftop">
+  <IconStyle>
+    <color>ffa79700</color>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png</href></Icon>
+  </IconStyle>
+</Style>
+<Style id="style_other">
+  <IconStyle>
+    <color>ff327d2e</color>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon>
+  </IconStyle>
+</Style>
+<Folder><name>Restaurant (37)</name>
+<Placemark>
+  <name>Flock to the Walk</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Chinese place with cool bar downstairs: Peacock Lounge</p>
+<img src="https://images.otstatic.com/prod1/48226028/2/huge.jpg" width="300" />
+<p>37 Whitaker St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=37%20Whitaker%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.092964,32.0797179,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Olde Pink House</name>
+  <description><![CDATA[<b>Restaurant</b>
+<img src="https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-4829-555460_489790621037444_2070619977_n0-1c941d915056a36_1c941ecc-5056-a36a-084fb0a35651bbc6.jpg?itok=HM_jmFRR" width="300" />
+<p>23 Abercorn St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=23%20Abercorn%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0888948,32.0790722,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Bella&apos;s Italian Cafe</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Classic family italian</p>
+<p>4420 Habersham St, Savannah, GA 31405</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=4420%20Habersham%20St%2C%20Savannah%2C%20GA%2031405">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.1023068,32.0375539,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Collins Quarter</name>
+  <description><![CDATA[<b>Restaurant</b>
+<img src="https://lh3.googleusercontent.com/p/AF1QipN2SPbVQ2O12YEPQPOcuAaj7av7lDpa5iMxKW-u=s1360-w1360-h1020" width="300" />
+<p>151 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=151%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0927836,32.0771632,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Grey</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Very highly rated foodie restaurant.  Prix Fixe menu...</p>
+<img src="https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-4809-11741146_428013827402355_2089844345582728489_o0-1b927f445056a36_1b928073-5056-a36a-08ac9277c63d7751.jpg?itok=kGoWjHsn" width="300" />
+<p>109 Martin Luther King Jr Blvd, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=109%20Martin%20Luther%20King%20Jr%20Blvd%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0977728,32.0798455,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Alligator Soul</name>
+  <description><![CDATA[<b>Restaurant</b>
+<img src="https://lh3.googleusercontent.com/p/AF1QipM8nFZIIyTUNtyU3cSFSzpkZqzp7d6IFcGUQng7=s1360-w1360-h1020" width="300" />
+<p>114 Barnard St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=114%20Barnard%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.09732,32.0712088,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Common Thread</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>From owners of Farm, foodie restaurant in an old home</p>
+<img src="https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-14586-DSC04405_FE1665A8-4515-4320-8844212111AB2C05_c5916286-c788-4983-be7342fed88b2308.jpg?itok=08kjsdfy" width="300" />
+<p>122 E 37th St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=122%20E%2037th%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0986909,32.0566375,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Fleeting</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Excellent micheln level food in Thompson Hotel</p>
+<img src="https://eatitandlikeit.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-29-at-3.16.55-PM-1.jpeg" width="300" />
+<p>201 Port St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=201%20Port%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0791516,32.0773535,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Cotton and Rye</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Good food South of Forsyth Park</p>
+<img src="https://image.resy.com/3/003/2/3686/7c955fe10112bcb93e68e40d43823a6e848d0684/jpg/1:1/1600" width="300" />
+<p>1801 Habersham St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1801%20Habersham%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.094919,32.058381,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Ordinary</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Rebecca went with Sebrina; terrible</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipMn1wGxIQpPmbsnsCfjh63cF8lN6sJBtMBd2pgs=s1360-w1360-h1020" width="300" />
+<p>217 1/2 W Broughton St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=217%201/2%20W%20Broughton%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0946137,32.0796527,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Hop Atomica</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Cool looking funky outside bar and food place.  South of Forsyth</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipPSu3ukgUtKclcbib-E11mp68mrCTrrYMhsKoyx=s1360-w1360-h1020" width="300" />
+<p>535 E 39th St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=535%20E%2039th%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.094669,32.0537483,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Foxy Loxy Cafe</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Mexican Tacos and coffee.  Way south of Forsyth Park</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipNbZLkj7CgPpCR-hyKxKpCyHfr6PqhUFLQoY3Bc=s1360-w1360-h1020" width="300" />
+<p>1919 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1919%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.1000687,32.0583788,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Java Burrito Company</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Fresh version of chipotle.  Great lunch option</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipOz1wOlPfZgIuMNTlUuTQtxer35jcsfX65yLGdW=s1360-w1360-h1020" width="300" />
+<p>420 E Broughton St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=420%20E%20Broughton%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0872978,32.0778093,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Arco Lounge</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Cool hip looking dinner and bar.  Small menu, great drinks, and awesome decor and views</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipNByK-gN-95NWg8CoL0rZ-GYgfCI-OE-4c4jkzc=s1360-w1360-h1020" width="300" />
+<p>42 E Bay St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=42%20E%20Bay%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0909356,32.080929,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>District Smokehouse</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>In Plant Riverside, BBQ place.  Is along the water, very casual outdoor bar/restaurant</p>
+<img src="https://s3-media0.fl.yelpcdn.com/bphoto/-aLbxD6yFxZjI_AxtYqAAw/o.jpg" width="300" />
+<p>500 W River St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=500%20W%20River%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.088401,32.0809082,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Olympia Cafe</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Looks like riverfront diner.  Skip it</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipP_gWt2qRqVcgt4vWuu3oBYQoQv1SWXuRSngxIg=s1360-w1360-h1020" width="300" />
+<p>5 E River St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=5%20E%20River%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0908655,32.0815377,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Fork &amp; Dagger Diner</name>
+  <description><![CDATA[<b>Lunch</b>
+<p>Lunch diner with old timey style</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipOdKe5FRxJDfTnRXT7HF89ji0yQysarPDZBVr7L=s1360-w1360-h1020" width="300" />
+<p>1402 Habersham St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1402%20Habersham%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.093824,32.060955,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Hueys Restaurant</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>River cafe featuring the food of New Orleans with a focus on distinctive seafood dishes &amp; soups.</p>
+<img src="https://media-cdn.tripadvisor.com/media/photo-s/08/80/70/14/located-above-huey-s.jpg" width="300" />
+<p>115 E River St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=115%20E%20River%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0894118,32.0810175,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Saint Bibiana</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Hotel Bardo; great</p>
+<img src="https://lede-admin.appetitomagazine.com/wp-content/uploads/sites/53/2023/09/Saint-Bibiana-Rendering.png?w=710" width="300" />
+<p>700 Drayton St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=700%20Drayton%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0946573,32.0673201,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Strange Bird</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>From owners of Farm. Is restaurant in old diner car</p>
+<img src="https://images.squarespace-cdn.com/content/v1/64a073ebf34ed93ec4021183/1689893531483-AJH6WVQPOYVYQOOTM982/SV+Images+Strangebird-1+-+website.jpg?format=750w" width="300" />
+<p>1220 Barnard St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1220%20Barnard%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0996994,32.0639285,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>La Scala</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Italian in neighborhood of Common Thread - CLOSED</p>
+<img src="https://images.squarespace-cdn.com/content/v1/59ff316018b27d02417da3bb/1540171909070-EF3BAGCCNSWGG6TS3HX4/LaScala_Night2_01.jpg" width="300" />
+<p>119 E 37th St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=119%20E%2037th%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0982727,32.0563508,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Elizabeth&apos;s </name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>105 E 37th St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=105%20E%2037th%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0988362,32.0564079,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Brochus</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Hipster chicken and good looking coctails</p>
+<img src="https://thevendry.com/cdn-cgi/image/width=3840,quality=75,fit=contain,metadata=none,format=auto/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fuploads.thevendry.co%2F36209%2F1708454609217_2023-06-22.jpg" width="300" />
+<p>2400 Bull St Suite 8, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2400%20Bull%20St%20Suite%208%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.1,32.0539,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Vault Kitchen and Market</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Asian fusion casual restaurant in bank building in Starland area</p>
+<img src="https://static.spotapps.co/spots/7d/6cc9495b0745cea70942348f0172dc/medium" width="300" />
+<p>2112 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2112%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.100355,32.0563231,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Ukiyo</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Sushi and Japanese restaurant in cool Starland area</p>
+<img src="https://images.otstatic.com/prod1/48204081/3/huge.jpg" width="300" />
+<p>2224 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2224%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.1006292,32.0559488,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Etang Chinese Restaurant</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Looks like classic chinese food place</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipP-PBe_VXmMu8BFW4i0Fy2hXk__v6F1dZ4ja4RE=s1360-w1360-h1020" width="300" />
+<p>513 E Oglethorpe Ave STE H, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=513%20E%20Oglethorpe%20Ave%20STE%20H%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0843,32.074,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Stone and Webster Chophouse</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Expensive steakhouse in JW Marriott Savannah</p>
+<img src="https://resizer.otstatic.com/v2/photos/wide-xlarge/2/47069931.jpg" width="300" />
+<p>400 W. River Street
+Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=400%20W.%20River%20Street%0ASavannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0954349,32.0834761,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Graffito</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Pizza / Italian in JW Marriott Savannah</p>
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/84/cd/8c/graffito.jpg?w=900&amp;h=500&amp;s=1" width="300" />
+<p>500 W River St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=500%20W%20River%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.088401,32.0809082,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Flora and Fauna</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>New hip looking restaurant / supper club in Starland area</p>
+<img src="https://spicymelonblog.com/wp-content/uploads/2024/06/0BF8545B-94D6-48DC-A109-DC3E454C9AF5-1024x1024.jpg" width="300" />
+<p>2401 Bull Street, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2401%20Bull%20Street%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.101376,32.054562,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Veratina</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Brand new italian restaurant.  Not yet fully up and running, but looks good</p>
+<p>606 Abercorn St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=606%20Abercorn%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.093325,32.068387,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Wiley&apos;s Championship BBQ</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Sav BBQ restaurant, featured on Jully</p>
+<img src="https://lh5.googleusercontent.com/p/AF1QipMBRLcXcXSfD5cRRo4Ic_M3bd5s3Ev3GyyT_c3F=w408-h270-k-no" width="300" />
+<p>4700 US-80, Savannah, GA 31410</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=4700%20US-80%2C%20Savannah%2C%20GA%2031410">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0597123,32.0385669,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Public Kitchen and Restaurant</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Small cute restaurant.  Good and in center of town</p>
+<img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWKn9aA8Am5B6DaDGajfO-dmVV510IvQb42B_xunUEqveBDMdPWrrgn1TZOwZ4pWZ0eDhSQ1PPNFjLQB12WnZl_lIB2y2BFyJeAMKRESHh9xfEhz15zhfNQIioX2XniFSiw4KL=w426-h240-k-no" width="300" />
+<p>1 W Liberty St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=1%20W%20Liberty%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0937352,32.0745355,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Sunday Sunday</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>&quot;Vietnamese classics with thoughtful American and French influences—highlighting fresh herbs, rich flavors, and seasonal ingredients. &quot;</p>
+<img src="https://eatitandlikeit.com/wp-content/uploads/2025/05/IMG_1277-3.jpeg" width="300" />
+<p>116 Whitaker St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=116%20Whitaker%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0935157,32.0777456,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Madame Butterfly</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Korean BBQ</p>
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/5f/f4/19/classy-all-day-spot-come.jpg?w=900&amp;h=500&amp;s=1" width="300" />
+<p>110 W Congress St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=110%20W%20Congress%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0929387,32.0800439,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Lucia Pasta Bar</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Pasta and Italian in Starland</p>
+<img src="https://www.savannahnow.com/gcdn/authoring/authoring-images/2025/08/15/NSMN/85678668007-081425-lucia-pasta-bar-rb-18.jpg?width=700&amp;height=467&amp;fit=crop&amp;format=pjpg&amp;auto=webp" width="300" />
+<p>2425 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2425%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.1015081,32.0542233,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Green Truck Pub</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Hipster pub in Starland</p>
+<img src="https://images.squarespace-cdn.com/content/v1/574883cc60b5e9b0a76eb03f/1597158312191-BM263GX164LZH7KBLXQH/truck_parked_outside_restaurant.jpg?format=1500w" width="300" />
+<p>2430 Habersham St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2430%20Habersham%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.0967534,32.0528776,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Crystal Beer Parlor</name>
+  <description><![CDATA[<b>Restaurant</b>
+<p>Feels like a college town restaurant and bar.  Sandwiches and mains.  A huge bar, with a fun feel</p>
+<img src="https://roadfood.com/wp-content/uploads/2019/09/Crystal-Beer-int.jpg" width="300" />
+<p>301 W Jones St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=301%20W%20Jones%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_restaurant</styleUrl>
+  <Point>
+    <coordinates>-81.097845,32.073561,0</coordinates>
+  </Point>
+</Placemark>
+</Folder>
+<Folder><name>Bar (14)</name>
+<Placemark>
+  <name>Peacock Lounge</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Super cool speakeasy below Flock to the Walk</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipOTNnh7NA13EDJUawugP31zFDAl7i6J4p14gahU=s1360-w1360-h1020" width="300" />
+<p>37 Whitaker St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=37%20Whitaker%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.092964,32.0797179,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Wyld</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Dock bar with views and drinks</p>
+<img src="https://wandernorthgeorgia.com/wp-content/uploads/2021/05/blog_photo_wyld_content-5.jpg" width="300" />
+<p>2740 Livingston Ave, Savannah, GA 31406</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2740%20Livingston%20Ave%2C%20Savannah%2C%20GA%2031406">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0477,32.0043,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Alley Cat</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Super cool underground bar.  Awesome menu</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmPpnb7V1bYA2lUNtgIwCrgzceiajDFzm6AA&amp;usqp=CAU" width="300" />
+<p>207 W Broughton Ln, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=207%20W%20Broughton%20Ln%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0944785,32.079318,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Savoy Society</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Super hip looking bar with some little food</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipM2wIBI3ctEe6R7M-1qImT1pC2VbIXt4ZskC3t0=s1360-w1360-h1020" width="300" />
+<p>102 E Liberty #109, Savannah, GA 31401
+</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=102%20E%20Liberty%20%23109%2C%20Savannah%2C%20GA%2031401%0A">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0918,32.0768,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Wayward</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Also in the Perry Lane Hotel, just not on the roof</p>
+<img src="https://d3qpqomdjdty0i.cloudfront.net/perrylanehotel.com-1565220108/cms/cache/v2/5b464a73d34ee.jpg/1920x1080/fit/80/d80cf9720efc4f14f80385f0f34f231c.jpg" width="300" />
+<p>257 E Perry St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=257%20E%20Perry%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0916936,32.0749925,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Artillery Bar</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Went with Elizabeth and David; really good </p>
+<img src="https://static.wixstatic.com/media/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg/v1/fill/w_250,h_163,al_c,q_90,enc_auto/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg" width="300" />
+<p>307 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=307%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0937527,32.0744548,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Bar Bibi</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Bar associated with Saint Bibiana</p>
+<img src="https://static-new.lhw.com/HotelImages/Final/LW2774/lw2774_164453533_370x197.jpg" width="300" />
+<p>700 Drayton St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=700%20Drayton%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0946573,32.0673201,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Water Witch Tiki</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Pretty cool Tiki bar right in Starland area</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThoVN5084zK3FdJMQX6kqwy_onIo__GfRPhQ&amp;s" width="300" />
+<p>2220 Bull St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2220%20Bull%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.1006232,32.0559648,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Municipal Grand</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Hotel bar run by Death &amp; Company people.  Unclear if open</p>
+<img src="https://platform.carolinas.eater.com/wp-content/uploads/sites/11/chorus/uploads/chorus_asset/file/25360307/Municipal_Grand_Lobby__credit__AAmp_Studio_.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=750" width="300" />
+<p>132 E Broughton St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=132%20E%20Broughton%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0903817,32.0786481,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Pendant Rooftop Bar</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Rooftop bar right near river in Drayton Hotel</p>
+<img src="https://platform.carolinas.eater.com/wp-content/uploads/sites/11/2022/03/Pendant-101.jpg?quality=90&amp;strip=all&amp;crop=0%2C0.004355021339606%2C100%2C99.991289957321&amp;w=750" width="300" />
+<p>7 Drayton St, Savannah, GA, 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=7%20Drayton%20St%2C%20Savannah%2C%20GA%2C%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0902776,32.0804135,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Abe&apos;s on Lincoln</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Total dive bar with pictures hanging.  Looks like a mess</p>
+<img src="https://visitsavannah.com/sites/default/files/styles/video_player_poster/public/listing_images/savannah-LSS-Abe-s-on-Lincoln-Savannah_5CA8F04E-94CF-4380-9A41AD2C1A54CB3D_0954b579-c98c-4f87-ae829714ece60c56.jpg?itok=eK5rS282" width="300" />
+<p>17 Lincoln St, Savannah, GA, 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=17%20Lincoln%20St%2C%20Savannah%2C%20GA%2C%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.088109,32.079461,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Over Yonder</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Hipster bar with live music and food in the back of Moodright&apos;s</p>
+<img src="https://www.savannahnow.com/gcdn/presto/2021/06/14/NSMN/93b7370a-533b-41ff-b74c-1969d305d011-061221_2_Over_Yonder.jpg?crop=2063,1161,x0,y104&amp;width=2063&amp;height=1161&amp;format=pjpg&amp;auto=webp" width="300" />
+<p>2424 Abercorn St, Savannah, GA, 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2424%20Abercorn%20St%2C%20Savannah%2C%20GA%2C%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0988079,32.053754,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Moodright’s</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Divey bar in Starland.  With billards, duckpin bowling, darts. Over Yonder is in the back.</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipM77jLRDr_Qzdg9aYZtNsivtYO6OZXRS5q_Y67H=w289-h312-n-k-no" width="300" />
+<p>2424 Abercorn St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2424%20Abercorn%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0988079,32.053754,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Lone Wolf Lounge</name>
+  <description><![CDATA[<b>Bar</b>
+<p>Divey hipster cocktail bar in Starland Area.  Very cool drinks, and very divey feel.</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvSIR9L0j1S-3exEmm2FdDw_PdJN9qKnWvYg&amp;s" width="300" />
+<p>2429 Lincoln St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2429%20Lincoln%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_bar</styleUrl>
+  <Point>
+    <coordinates>-81.0982768,32.052538,0</coordinates>
+  </Point>
+</Placemark>
+</Folder>
+<Folder><name>Rooftop Bar (3)</name>
+<Placemark>
+  <name>Bar Julian</name>
+  <description><![CDATA[<b>Rooftop Bar</b>
+<p>Upscale bar on the roof at the Thompson hotel</p>
+<img src="https://lh3.googleusercontent.com/p/AF1QipOSM6BaqcbLDLIppFOE0zXRAifI9bi15IBQ95Wy=s1360-w1360-h1020" width="300" />
+<p>201 Port St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=201%20Port%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_rooftop</styleUrl>
+  <Point>
+    <coordinates>-81.0791516,32.0773535,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>The Lost Square</name>
+  <description><![CDATA[<b>Rooftop Bar</b>
+<p>Rooftop bar at Alida hotel.  Fancy</p>
+<img src="https://media-cdn.tripadvisor.com/media/photo-s/1b/1a/6a/59/the-lost-square.jpg" width="300" />
+<p>412 Williamson St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=412%20Williamson%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_rooftop</styleUrl>
+  <Point>
+    <coordinates>-81.0956592,32.0830715,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Peregrin Rooftop Bar</name>
+  <description><![CDATA[<b>Rooftop Bar</b>
+<p>Bar on top of Perry Lane hotel.  Really cool roof with views</p>
+<img src="https://www.godsavethepoints.com/wp-content/uploads/2022/09/savlc-peregrin-rooftop-2697-hor-wide.webp" width="300" />
+<p>257 E Perry St, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=257%20E%20Perry%20St%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_rooftop</styleUrl>
+  <Point>
+    <coordinates>-81.0916936,32.0749925,0</coordinates>
+  </Point>
+</Placemark>
+</Folder>
+<Folder><name>Other (2)</name>
+<Placemark>
+  <name>Starland Yard</name>
+  <description><![CDATA[<b>Food Hall</b>
+<p>Hipster food truck area.  Awesome pizza</p>
+<img src="https://www.southmag.com/wp-content/uploads/data-import/93eba150/starland20tour20pic.jpg" width="300" />
+<p>2411 De Soto Ave, Savannah, GA 31401</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2411%20De%20Soto%20Ave%2C%20Savannah%2C%20GA%2031401">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_other</styleUrl>
+  <Point>
+    <coordinates>-81.1020516,32.0546107,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Auspicious Baking Company</name>
+  <description><![CDATA[<b>Bakery?</b>
+<img src="https://media1.fdncms.com/connectsavannah/imager/u/original/14669385/food--auspicious-1.jpg" width="300" />
+<p>7360 Skidaway Rd, Savannah, GA 31406</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=7360%20Skidaway%20Rd%2C%20Savannah%2C%20GA%2031406">Open in Google Maps</a>]]></description>
+  <styleUrl>#style_other</styleUrl>
+  <Point>
+    <coordinates>-81.0745131,31.9871216,0</coordinates>
+  </Point>
+</Placemark>
+</Folder>
+</Document>
+</kml>
