@@ -436,26 +436,26 @@ if (allCoords.length) {{
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     """Generate a KML file for import into Google My Maps."""
 
-    # Google My Maps native icons (white on transparent, designed for tinting)
-    # 960 = fork/knife (dining), 962 = wine glass, 961 = cocktail, 503 = blank pin
+    # Google v2 Place Icons (modern, clean)
+    # Restaurant = fork/knife, Bar/Rooftop = cocktail glass, Other = convenience store
     KML_STYLES = {
         "restaurant": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/960-wht-dinner-702-normal.png",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet.png",
             "color": "ff0000C6",  # red (KML = aabbggrr)
             "scale": 1.0,
         },
         "bar": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/962-wht-wine-702-normal.png",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.png",
             "color": "ffC06515",  # dark blue
             "scale": 1.0,
         },
         "rooftop": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/961-wht-cocktail-702-normal.png",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet.png",
             "color": "ffA79700",  # teal
             "scale": 1.0,
         },
         "other": {
-            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/convenience_pinlet.png",
             "color": "ff327D2E",  # green
             "scale": 1.0,
         },
