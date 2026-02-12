@@ -468,7 +468,6 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     # Schema for ExtendedData columns (My Maps reads these as data columns)
     lines.append('<Schema id="restaurant_schema">')
     lines.append('  <SimpleField type="string" name="Category"><displayName>Category</displayName></SimpleField>')
-    lines.append('  <SimpleField type="string" name="Type"><displayName>Type</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Summary"><displayName>Summary</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Address"><displayName>Address</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Photo"><displayName>Photo</displayName></SimpleField>')
@@ -480,19 +479,12 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
             + urllib.parse.quote(r["address"])
         )
 
-        # Description -- only the photo since ExtendedData handles text fields
-        description = ""
-        if r.get("photo_url"):
-            description = f'<img src="{esc(r["photo_url"])}" width="300" />'
-
         cat_label = CAT_LABELS.get(r["category"], "Other")
 
         lines.append("<Placemark>")
         lines.append(f"  <name>{esc(r['name'])}</name>")
-        lines.append(f"  <description><![CDATA[{description}]]></description>")
         lines.append('  <ExtendedData><SchemaData schemaUrl="#restaurant_schema">')
         lines.append(f'    <SimpleData name="Category">{esc(cat_label)}</SimpleData>')
-        lines.append(f'    <SimpleData name="Type">{esc(r.get("type", ""))}</SimpleData>')
         lines.append(f'    <SimpleData name="Summary">{esc(r.get("summary", ""))}</SimpleData>')
         lines.append(f'    <SimpleData name="Address">{esc(r["address"])}</SimpleData>')
         lines.append(f'    <SimpleData name="Photo">{esc(r.get("photo_url", ""))}</SimpleData>')
