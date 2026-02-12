@@ -5,51 +5,31 @@
 <description>Auto-generated from Google Sheets</description>
 <Style id="style_restaurant">
   <IconStyle>
-    <scale>0.8</scale>
-    <Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon>
+    <color>ff0000C6</color>
+    <scale>1.0</scale>
+    <Icon><href>https://www.gstatic.com/mapspro/images/stock/960-wht-dinner-702-normal.png</href></Icon>
   </IconStyle>
-  <LabelStyle>
-    <scale>0.75</scale>
-  </LabelStyle>
-  <BalloonStyle>
-    <text><![CDATA[$[description]]]></text>
-  </BalloonStyle>
 </Style>
 <Style id="style_bar">
   <IconStyle>
-    <scale>0.8</scale>
-    <Icon><href>http://maps.google.com/mapfiles/ms/icons/blue-dot.png</href></Icon>
+    <color>ffC06515</color>
+    <scale>1.0</scale>
+    <Icon><href>https://www.gstatic.com/mapspro/images/stock/962-wht-wine-702-normal.png</href></Icon>
   </IconStyle>
-  <LabelStyle>
-    <scale>0.75</scale>
-  </LabelStyle>
-  <BalloonStyle>
-    <text><![CDATA[$[description]]]></text>
-  </BalloonStyle>
 </Style>
 <Style id="style_rooftop">
   <IconStyle>
-    <scale>0.8</scale>
-    <Icon><href>http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png</href></Icon>
+    <color>ffA79700</color>
+    <scale>1.0</scale>
+    <Icon><href>https://www.gstatic.com/mapspro/images/stock/961-wht-cocktail-702-normal.png</href></Icon>
   </IconStyle>
-  <LabelStyle>
-    <scale>0.75</scale>
-  </LabelStyle>
-  <BalloonStyle>
-    <text><![CDATA[$[description]]]></text>
-  </BalloonStyle>
 </Style>
 <Style id="style_other">
   <IconStyle>
-    <scale>0.8</scale>
-    <Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon>
+    <color>ff327D2E</color>
+    <scale>1.0</scale>
+    <Icon><href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href></Icon>
   </IconStyle>
-  <LabelStyle>
-    <scale>0.75</scale>
-  </LabelStyle>
-  <BalloonStyle>
-    <text><![CDATA[$[description]]]></text>
-  </BalloonStyle>
 </Style>
 <Folder><name>Restaurant (37)</name>
 <Placemark>

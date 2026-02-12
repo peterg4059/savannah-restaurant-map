@@ -436,23 +436,28 @@ if (allCoords.length) {{
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     """Generate a KML file for import into Google My Maps."""
 
-    # Simple small colored dot icons -- no gradients, clean look
+    # Google My Maps native icons (white on transparent, designed for tinting)
+    # 960 = fork/knife (dining), 962 = wine glass, 961 = cocktail, 503 = blank pin
     KML_STYLES = {
         "restaurant": {
-            "icon": "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
-            "scale": 0.8,
+            "icon": "https://www.gstatic.com/mapspro/images/stock/960-wht-dinner-702-normal.png",
+            "color": "ff0000C6",  # red (KML = aabbggrr)
+            "scale": 1.0,
         },
         "bar": {
-            "icon": "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            "scale": 0.8,
+            "icon": "https://www.gstatic.com/mapspro/images/stock/962-wht-wine-702-normal.png",
+            "color": "ffC06515",  # dark blue
+            "scale": 1.0,
         },
         "rooftop": {
-            "icon": "http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png",
-            "scale": 0.8,
+            "icon": "https://www.gstatic.com/mapspro/images/stock/961-wht-cocktail-702-normal.png",
+            "color": "ffA79700",  # teal
+            "scale": 1.0,
         },
         "other": {
-            "icon": "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            "scale": 0.8,
+            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "color": "ff327D2E",  # green
+            "scale": 1.0,
         },
     }
 
@@ -473,19 +478,14 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         '<description>Auto-generated from Google Sheets</description>',
     ]
 
-    # Define styles with small icons + visible name labels
+    # Define styles with colored icons
     for cat_key, style in KML_STYLES.items():
         lines.append(f'<Style id="style_{cat_key}">')
         lines.append('  <IconStyle>')
+        lines.append(f'    <color>{style["color"]}</color>')
         lines.append(f'    <scale>{style["scale"]}</scale>')
         lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
         lines.append('  </IconStyle>')
-        lines.append('  <LabelStyle>')
-        lines.append('    <scale>0.75</scale>')
-        lines.append('  </LabelStyle>')
-        lines.append('  <BalloonStyle>')
-        lines.append('    <text><![CDATA[$[description]]]></text>')
-        lines.append('  </BalloonStyle>')
         lines.append('</Style>')
 
     # Group restaurants by category into folders
