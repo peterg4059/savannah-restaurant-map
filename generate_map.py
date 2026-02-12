@@ -434,28 +434,11 @@ if (allCoords.length) {{
 
 
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
-    """Generate a KML file for import into Google My Maps."""
+    """Generate a KML file for import into Google My Maps.
 
-    # Pre-colored Google paddle pins -- these reliably render in
-    # both My Maps web AND the Google Maps iOS/Android app
-    KML_STYLES = {
-        "restaurant": {
-            "icon": "http://maps.google.com/mapfiles/kml/paddle/red-blank.png",
-            "scale": 0.7,
-        },
-        "bar": {
-            "icon": "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png",
-            "scale": 0.7,
-        },
-        "rooftop": {
-            "icon": "http://maps.google.com/mapfiles/kml/paddle/ltblu-blank.png",
-            "scale": 0.7,
-        },
-        "other": {
-            "icon": "http://maps.google.com/mapfiles/kml/paddle/grn-blank.png",
-            "scale": 0.7,
-        },
-    }
+    Uses ExtendedData with a 'Category' column so My Maps can use
+    'Style by data column' for persistent, mobile-friendly icons.
+    """
 
     def esc(text: str) -> str:
         """Escape XML special characters."""
@@ -466,6 +449,14 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
                 .replace('"', "&quot;")
                 .replace("'", "&apos;"))
 
+    # Map category keys to friendly labels for the data column
+    CAT_LABELS = {
+        "restaurant": "Restaurant",
+        "bar": "Bar",
+        "rooftop": "Rooftop Bar",
+        "other": "Other",
+    }
+
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<kml xmlns="http://www.opengis.net/kml/2.2">',
@@ -474,66 +465,50 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         '<description>Auto-generated from Google Sheets</description>',
     ]
 
-    # Define styles (no color tint needed -- icons are pre-colored)
-    for cat_key, style in KML_STYLES.items():
-        lines.append(f'<Style id="style_{cat_key}">')
-        lines.append('  <IconStyle>')
-        lines.append(f'    <scale>{style["scale"]}</scale>')
-        lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
-        lines.append('  </IconStyle>')
-        lines.append('</Style>')
+    # Schema for ExtendedData columns (My Maps reads these as data columns)
+    lines.append('<Schema id="restaurant_schema">')
+    lines.append('  <SimpleField type="string" name="Category"><displayName>Category</displayName></SimpleField>')
+    lines.append('  <SimpleField type="string" name="Type"><displayName>Type</displayName></SimpleField>')
+    lines.append('  <SimpleField type="string" name="Summary"><displayName>Summary</displayName></SimpleField>')
+    lines.append('  <SimpleField type="string" name="Address"><displayName>Address</displayName></SimpleField>')
+    lines.append('  <SimpleField type="string" name="Photo"><displayName>Photo</displayName></SimpleField>')
+    lines.append('</Schema>')
 
-    # Group restaurants by category into folders
-    by_cat = {}
     for r in restaurants:
-        by_cat.setdefault(r["category"], []).append(r)
+        gmaps_url = (
+            "https://www.google.com/maps/search/?api=1&query="
+            + urllib.parse.quote(r["address"])
+        )
 
-    for cat_key in ["restaurant", "bar", "rooftop", "other"]:
-        items = by_cat.get(cat_key, [])
-        if not items:
-            continue
-        label = CATEGORIES[cat_key][0]
-        lines.append(f'<Folder><name>{esc(label)} ({len(items)})</name>')
-
-        for r in items:
-            gmaps_url = (
-                "https://www.google.com/maps/search/?api=1&query="
-                + urllib.parse.quote(r["address"])
+        # Description for the info popup
+        desc_parts = []
+        if r.get("type"):
+            desc_parts.append(f'<b>{esc(r["type"])}</b><br/>')
+        if r.get("summary"):
+            desc_parts.append(f'<p>{esc(r["summary"])}</p>')
+        desc_parts.append(f'<p>{esc(r["address"])}</p>')
+        if r.get("photo_url"):
+            desc_parts.append(
+                f'<img src="{esc(r["photo_url"])}" width="300" />'
             )
+        description = "\n".join(desc_parts)
 
-            # Build description -- summary first so it's visible on
-            # mobile Google Maps without scrolling past the photo
-            desc_parts = []
+        cat_label = CAT_LABELS.get(r["category"], "Other")
 
-            # Type (plain text, mobile-friendly)
-            if r.get("type"):
-                desc_parts.append(f'<b>{esc(r["type"])}</b><br/>')
-
-            # Summary -- FIRST so it shows on mobile
-            if r.get("summary"):
-                desc_parts.append(f'<p>{esc(r["summary"])}</p>')
-
-            # Address
-            desc_parts.append(f'<p>{esc(r["address"])}</p>')
-
-            # Photo after text content
-            if r.get("photo_url"):
-                desc_parts.append(
-                    f'<img src="{esc(r["photo_url"])}" width="300" />'
-                )
-
-            description = "\n".join(desc_parts)
-
-            lines.append("<Placemark>")
-            lines.append(f"  <name>{esc(r['name'])}</name>")
-            lines.append(f"  <description><![CDATA[{description}]]></description>")
-            lines.append(f'  <styleUrl>#style_{r["category"]}</styleUrl>')
-            lines.append("  <Point>")
-            lines.append(f"    <coordinates>{r['lng']},{r['lat']},0</coordinates>")
-            lines.append("  </Point>")
-            lines.append("</Placemark>")
-
-        lines.append("</Folder>")
+        lines.append("<Placemark>")
+        lines.append(f"  <name>{esc(r['name'])}</name>")
+        lines.append(f"  <description><![CDATA[{description}]]></description>")
+        lines.append('  <ExtendedData><SchemaData schemaUrl="#restaurant_schema">')
+        lines.append(f'    <SimpleData name="Category">{esc(cat_label)}</SimpleData>')
+        lines.append(f'    <SimpleData name="Type">{esc(r.get("type", ""))}</SimpleData>')
+        lines.append(f'    <SimpleData name="Summary">{esc(r.get("summary", ""))}</SimpleData>')
+        lines.append(f'    <SimpleData name="Address">{esc(r["address"])}</SimpleData>')
+        lines.append(f'    <SimpleData name="Photo">{esc(r.get("photo_url", ""))}</SimpleData>')
+        lines.append('  </SchemaData></ExtendedData>')
+        lines.append("  <Point>")
+        lines.append(f"    <coordinates>{r['lng']},{r['lat']},0</coordinates>")
+        lines.append("  </Point>")
+        lines.append("</Placemark>")
 
     lines.append("</Document>")
     lines.append("</kml>")
