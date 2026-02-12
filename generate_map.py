@@ -480,18 +480,10 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
             + urllib.parse.quote(r["address"])
         )
 
-        # Description for the info popup
-        desc_parts = []
-        if r.get("type"):
-            desc_parts.append(f'<b>{esc(r["type"])}</b><br/>')
-        if r.get("summary"):
-            desc_parts.append(f'<p>{esc(r["summary"])}</p>')
-        desc_parts.append(f'<p>{esc(r["address"])}</p>')
+        # Description -- only the photo since ExtendedData handles text fields
+        description = ""
         if r.get("photo_url"):
-            desc_parts.append(
-                f'<img src="{esc(r["photo_url"])}" width="300" />'
-            )
-        description = "\n".join(desc_parts)
+            description = f'<img src="{esc(r["photo_url"])}" width="300" />'
 
         cat_label = CAT_LABELS.get(r["category"], "Other")
 
