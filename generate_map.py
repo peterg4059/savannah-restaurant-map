@@ -470,7 +470,6 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     lines.append('  <SimpleField type="string" name="Category"><displayName>Category</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Summary"><displayName>Summary</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Address"><displayName>Address</displayName></SimpleField>')
-    lines.append('  <SimpleField type="string" name="Photo"><displayName>Photo</displayName></SimpleField>')
     lines.append('</Schema>')
 
     for r in restaurants:
@@ -481,13 +480,19 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
 
         cat_label = CAT_LABELS.get(r["category"], "Other")
 
+        # Photo in description so it renders as an image
+        description = ""
+        if r.get("photo_url"):
+            description = f'<img src="{esc(r["photo_url"])}" width="300" />'
+
         lines.append("<Placemark>")
         lines.append(f"  <name>{esc(r['name'])}</name>")
+        if description:
+            lines.append(f"  <description><![CDATA[{description}]]></description>")
         lines.append('  <ExtendedData><SchemaData schemaUrl="#restaurant_schema">')
         lines.append(f'    <SimpleData name="Category">{esc(cat_label)}</SimpleData>')
         lines.append(f'    <SimpleData name="Summary">{esc(r.get("summary", ""))}</SimpleData>')
         lines.append(f'    <SimpleData name="Address">{esc(r["address"])}</SimpleData>')
-        lines.append(f'    <SimpleData name="Photo">{esc(r.get("photo_url", ""))}</SimpleData>')
         lines.append('  </SchemaData></ExtendedData>')
         lines.append("  <Point>")
         lines.append(f"    <coordinates>{r['lng']},{r['lat']},0</coordinates>")
