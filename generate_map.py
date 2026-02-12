@@ -469,6 +469,7 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     lines.append('<Schema id="restaurant_schema">')
     lines.append('  <SimpleField type="string" name="Category"><displayName>Category</displayName></SimpleField>')
     lines.append('  <SimpleField type="string" name="Address"><displayName>Address</displayName></SimpleField>')
+    lines.append('  <SimpleField type="string" name="Photo"><displayName>Photo</displayName></SimpleField>')
     lines.append('</Schema>')
 
     for r in restaurants:
@@ -493,6 +494,7 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         lines.append('  <ExtendedData><SchemaData schemaUrl="#restaurant_schema">')
         lines.append(f'    <SimpleData name="Category">{esc(cat_label)}</SimpleData>')
         lines.append(f'    <SimpleData name="Address">{esc(r["address"])}</SimpleData>')
+        lines.append(f'    <SimpleData name="Photo">{esc(r.get("photo_url", ""))}</SimpleData>')
         lines.append('  </SchemaData></ExtendedData>')
         lines.append("  <Point>")
         lines.append(f"    <coordinates>{r['lng']},{r['lat']},0</coordinates>")
