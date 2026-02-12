@@ -436,12 +436,37 @@ if (allCoords.length) {{
 def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
     """Generate a KML file for import into Google My Maps."""
 
-    # Google My Maps icon colors (using standard palette names)
+    # Google My Maps compatible icons from the gstatic icon set
+    # These are the actual icons used by Google My Maps internally
     KML_STYLES = {
-        "restaurant": {"color": "ff2828c6", "icon": "http://maps.google.com/mapfiles/kml/paddle/red-circle.png"},
-        "bar":        {"color": "ffc06515", "icon": "http://maps.google.com/mapfiles/kml/paddle/blu-circle.png"},
-        "rooftop":    {"color": "ffa79700", "icon": "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png"},
-        "other":      {"color": "ff327d2e", "icon": "http://maps.google.com/mapfiles/kml/paddle/grn-circle.png"},
+        "restaurant": {
+            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "color": "ff1427C6",  # red (AABBGGRR)
+            "scale": 1.0,
+        },
+        "bar": {
+            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "color": "ffC06515",  # dark blue
+            "scale": 1.0,
+        },
+        "rooftop": {
+            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "color": "ffA79700",  # teal
+            "scale": 1.0,
+        },
+        "other": {
+            "icon": "https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png",
+            "color": "ff327D2E",  # green
+            "scale": 1.0,
+        },
+    }
+
+    # Use recognizable Google Earth icons for each type
+    ICON_URLS = {
+        "restaurant": "http://maps.google.com/mapfiles/kml/shapes/dining.png",
+        "bar":        "http://maps.google.com/mapfiles/kml/shapes/bars.png",
+        "rooftop":    "http://maps.google.com/mapfiles/kml/shapes/bars.png",
+        "other":      "http://maps.google.com/mapfiles/kml/shapes/grocery.png",
     }
 
     def esc(text: str) -> str:
@@ -461,14 +486,18 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         '<description>Auto-generated from Google Sheets</description>',
     ]
 
-    # Define styles
+    # Define styles with distinct icons per category
     for cat_key, style in KML_STYLES.items():
-        label = CATEGORIES[cat_key][0]
+        icon_url = ICON_URLS[cat_key]
         lines.append(f'<Style id="style_{cat_key}">')
         lines.append('  <IconStyle>')
         lines.append(f'    <color>{style["color"]}</color>')
-        lines.append(f'    <Icon><href>{style["icon"]}</href></Icon>')
+        lines.append(f'    <scale>{style["scale"]}</scale>')
+        lines.append(f'    <Icon><href>{icon_url}</href></Icon>')
         lines.append('  </IconStyle>')
+        lines.append('  <BalloonStyle>')
+        lines.append('    <text><![CDATA[$[description]]]></text>')
+        lines.append('  </BalloonStyle>')
         lines.append('</Style>')
 
     # Group restaurants by category into folders
@@ -489,19 +518,53 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
                 + urllib.parse.quote(r["address"])
             )
 
+            # Build rich HTML description for the info bubble
             desc_parts = []
-            if r.get("type"):
-                desc_parts.append(f"<b>{esc(r['type'])}</b>")
-            if r.get("summary"):
-                desc_parts.append(f"<p>{esc(r['summary'])}</p>")
+
+            # Photo at the top
             if r.get("photo_url"):
                 desc_parts.append(
-                    f'<img src="{esc(r["photo_url"])}" width="300" />'
+                    f'<div style="margin-bottom:8px;">'
+                    f'<img src="{esc(r["photo_url"])}" '
+                    f'style="width:100%;max-width:320px;border-radius:8px;" />'
+                    f'</div>'
                 )
-            desc_parts.append(f"<p>{esc(r['address'])}</p>")
+
+            # Type badge
+            if r.get("type"):
+                cat_colors = {
+                    "restaurant": "#C62828", "bar": "#1565C0",
+                    "rooftop": "#0097A7", "other": "#2E7D32",
+                }
+                badge_color = cat_colors.get(r.get("category", "other"), "#666")
+                desc_parts.append(
+                    f'<div style="display:inline-block;background:{badge_color};'
+                    f'color:white;padding:2px 10px;border-radius:12px;'
+                    f'font-size:12px;font-weight:bold;margin-bottom:8px;">'
+                    f'{esc(r["type"])}</div>'
+                )
+
+            # Summary
+            if r.get("summary"):
+                desc_parts.append(
+                    f'<div style="font-size:14px;color:#333;line-height:1.5;'
+                    f'margin-bottom:10px;">{esc(r["summary"])}</div>'
+                )
+
+            # Address
             desc_parts.append(
-                f'<a href="{esc(gmaps_url)}">Open in Google Maps</a>'
+                f'<div style="font-size:12px;color:#888;margin-bottom:8px;">'
+                f'{esc(r["address"])}</div>'
             )
+
+            # Navigation link
+            desc_parts.append(
+                f'<a href="{esc(gmaps_url)}" style="display:inline-block;'
+                f'background:#1a73e8;color:white;padding:8px 16px;'
+                f'border-radius:8px;text-decoration:none;font-size:13px;'
+                f'font-weight:bold;">Navigate</a>'
+            )
+
             description = "\n".join(desc_parts)
 
             lines.append("<Placemark>")
