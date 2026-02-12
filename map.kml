@@ -9,7 +9,7 @@
 </Schema>
 <Placemark>
   <name>Flock to the Walk</name>
-  <description><![CDATA[<p>Chinese place with cool bar downstairs: Peacock Lounge</p>
+  <description><![CDATA[Chinese place with cool bar downstairs: Peacock Lounge
 <img src="https://images.otstatic.com/prod1/48226028/2/huge.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -21,7 +21,7 @@
 </Placemark>
 <Placemark>
   <name>Peacock Lounge</name>
-  <description><![CDATA[<p>Super cool speakeasy below Flock to the Walk</p>
+  <description><![CDATA[Super cool speakeasy below Flock to the Walk
 <img src="https://lh3.googleusercontent.com/p/AF1QipOTNnh7NA13EDJUawugP31zFDAl7i6J4p14gahU=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -44,7 +44,7 @@
 </Placemark>
 <Placemark>
   <name>Starland Yard</name>
-  <description><![CDATA[<p>Hipster food truck area.  Awesome pizza</p>
+  <description><![CDATA[Hipster food truck area.  Awesome pizza
 <img src="https://www.southmag.com/wp-content/uploads/data-import/93eba150/starland20tour20pic.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Other</SimpleData>
@@ -56,7 +56,7 @@
 </Placemark>
 <Placemark>
   <name>Bella&apos;s Italian Cafe</name>
-  <description><![CDATA[<p>Classic family italian</p>]]></description>
+  <description><![CDATA[Classic family italian]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
     <SimpleData name="Address">4420 Habersham St, Savannah, GA 31405</SimpleData>
@@ -67,7 +67,7 @@
 </Placemark>
 <Placemark>
   <name>The Wyld</name>
-  <description><![CDATA[<p>Dock bar with views and drinks</p>
+  <description><![CDATA[Dock bar with views and drinks
 <img src="https://wandernorthgeorgia.com/wp-content/uploads/2021/05/blog_photo_wyld_content-5.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -101,7 +101,7 @@
 </Placemark>
 <Placemark>
   <name>The Grey</name>
-  <description><![CDATA[<p>Very highly rated foodie restaurant.  Prix Fixe menu...</p>
+  <description><![CDATA[Very highly rated foodie restaurant.  Prix Fixe menu...
 <img src="https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-4809-11741146_428013827402355_2089844345582728489_o0-1b927f445056a36_1b928073-5056-a36a-08ac9277c63d7751.jpg?itok=kGoWjHsn" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -124,7 +124,7 @@
 </Placemark>
 <Placemark>
   <name>Common Thread</name>
-  <description><![CDATA[<p>From owners of Farm, foodie restaurant in an old home</p>
+  <description><![CDATA[From owners of Farm, foodie restaurant in an old home
 <img src="https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-14586-DSC04405_FE1665A8-4515-4320-8844212111AB2C05_c5916286-c788-4983-be7342fed88b2308.jpg?itok=08kjsdfy" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -136,7 +136,7 @@
 </Placemark>
 <Placemark>
   <name>Bar Julian</name>
-  <description><![CDATA[<p>Upscale bar on the roof at the Thompson hotel</p>
+  <description><![CDATA[Upscale bar on the roof at the Thompson hotel
 <img src="https://lh3.googleusercontent.com/p/AF1QipOSM6BaqcbLDLIppFOE0zXRAifI9bi15IBQ95Wy=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Rooftop Bar</SimpleData>
@@ -148,7 +148,7 @@
 </Placemark>
 <Placemark>
   <name>Fleeting</name>
-  <description><![CDATA[<p>Excellent micheln level food in Thompson Hotel</p>
+  <description><![CDATA[Excellent micheln level food in Thompson Hotel
 <img src="https://eatitandlikeit.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-29-at-3.16.55-PM-1.jpeg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -160,7 +160,7 @@
 </Placemark>
 <Placemark>
   <name>Cotton and Rye</name>
-  <description><![CDATA[<p>Good food South of Forsyth Park</p>
+  <description><![CDATA[Good food South of Forsyth Park
 <img src="https://image.resy.com/3/003/2/3686/7c955fe10112bcb93e68e40d43823a6e848d0684/jpg/1:1/1600" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -172,7 +172,7 @@
 </Placemark>
 <Placemark>
   <name>Alley Cat</name>
-  <description><![CDATA[<p>Super cool underground bar.  Awesome menu</p>
+  <description><![CDATA[Super cool underground bar.  Awesome menu
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmPpnb7V1bYA2lUNtgIwCrgzceiajDFzm6AA&amp;usqp=CAU" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -184,7 +184,7 @@
 </Placemark>
 <Placemark>
   <name>The Ordinary</name>
-  <description><![CDATA[<p>Rebecca went with Sebrina; terrible</p>
+  <description><![CDATA[Rebecca went with Sebrina; terrible
 <img src="https://lh3.googleusercontent.com/p/AF1QipMn1wGxIQpPmbsnsCfjh63cF8lN6sJBtMBd2pgs=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -196,7 +196,7 @@
 </Placemark>
 <Placemark>
   <name>The Lost Square</name>
-  <description><![CDATA[<p>Rooftop bar at Alida hotel.  Fancy</p>
+  <description><![CDATA[Rooftop bar at Alida hotel.  Fancy
 <img src="https://media-cdn.tripadvisor.com/media/photo-s/1b/1a/6a/59/the-lost-square.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Rooftop Bar</SimpleData>
@@ -208,7 +208,7 @@
 </Placemark>
 <Placemark>
   <name>Hop Atomica</name>
-  <description><![CDATA[<p>Cool looking funky outside bar and food place.  South of Forsyth</p>
+  <description><![CDATA[Cool looking funky outside bar and food place.  South of Forsyth
 <img src="https://lh3.googleusercontent.com/p/AF1QipPSu3ukgUtKclcbib-E11mp68mrCTrrYMhsKoyx=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -220,7 +220,7 @@
 </Placemark>
 <Placemark>
   <name>Foxy Loxy Cafe</name>
-  <description><![CDATA[<p>Mexican Tacos and coffee.  Way south of Forsyth Park</p>
+  <description><![CDATA[Mexican Tacos and coffee.  Way south of Forsyth Park
 <img src="https://lh3.googleusercontent.com/p/AF1QipNbZLkj7CgPpCR-hyKxKpCyHfr6PqhUFLQoY3Bc=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -232,7 +232,7 @@
 </Placemark>
 <Placemark>
   <name>Java Burrito Company</name>
-  <description><![CDATA[<p>Fresh version of chipotle.  Great lunch option</p>
+  <description><![CDATA[Fresh version of chipotle.  Great lunch option
 <img src="https://lh3.googleusercontent.com/p/AF1QipOz1wOlPfZgIuMNTlUuTQtxer35jcsfX65yLGdW=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -244,7 +244,7 @@
 </Placemark>
 <Placemark>
   <name>Arco Lounge</name>
-  <description><![CDATA[<p>Cool hip looking dinner and bar.  Small menu, great drinks, and awesome decor and views</p>
+  <description><![CDATA[Cool hip looking dinner and bar.  Small menu, great drinks, and awesome decor and views
 <img src="https://lh3.googleusercontent.com/p/AF1QipNByK-gN-95NWg8CoL0rZ-GYgfCI-OE-4c4jkzc=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -256,7 +256,7 @@
 </Placemark>
 <Placemark>
   <name>Savoy Society</name>
-  <description><![CDATA[<p>Super hip looking bar with some little food</p>
+  <description><![CDATA[Super hip looking bar with some little food
 <img src="https://lh3.googleusercontent.com/p/AF1QipM2wIBI3ctEe6R7M-1qImT1pC2VbIXt4ZskC3t0=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -269,7 +269,7 @@
 </Placemark>
 <Placemark>
   <name>Peregrin Rooftop Bar</name>
-  <description><![CDATA[<p>Bar on top of Perry Lane hotel.  Really cool roof with views</p>
+  <description><![CDATA[Bar on top of Perry Lane hotel.  Really cool roof with views
 <img src="https://www.godsavethepoints.com/wp-content/uploads/2022/09/savlc-peregrin-rooftop-2697-hor-wide.webp" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Rooftop Bar</SimpleData>
@@ -281,7 +281,7 @@
 </Placemark>
 <Placemark>
   <name>Wayward</name>
-  <description><![CDATA[<p>Also in the Perry Lane Hotel, just not on the roof</p>
+  <description><![CDATA[Also in the Perry Lane Hotel, just not on the roof
 <img src="https://d3qpqomdjdty0i.cloudfront.net/perrylanehotel.com-1565220108/cms/cache/v2/5b464a73d34ee.jpg/1920x1080/fit/80/d80cf9720efc4f14f80385f0f34f231c.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -293,7 +293,7 @@
 </Placemark>
 <Placemark>
   <name>Artillery Bar</name>
-  <description><![CDATA[<p>Went with Elizabeth and David; really good </p>
+  <description><![CDATA[Went with Elizabeth and David; really good 
 <img src="https://static.wixstatic.com/media/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg/v1/fill/w_250,h_163,al_c,q_90,enc_auto/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -305,7 +305,7 @@
 </Placemark>
 <Placemark>
   <name>District Smokehouse</name>
-  <description><![CDATA[<p>In Plant Riverside, BBQ place.  Is along the water, very casual outdoor bar/restaurant</p>
+  <description><![CDATA[In Plant Riverside, BBQ place.  Is along the water, very casual outdoor bar/restaurant
 <img src="https://s3-media0.fl.yelpcdn.com/bphoto/-aLbxD6yFxZjI_AxtYqAAw/o.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -317,7 +317,7 @@
 </Placemark>
 <Placemark>
   <name>Olympia Cafe</name>
-  <description><![CDATA[<p>Looks like riverfront diner.  Skip it</p>
+  <description><![CDATA[Looks like riverfront diner.  Skip it
 <img src="https://lh3.googleusercontent.com/p/AF1QipP_gWt2qRqVcgt4vWuu3oBYQoQv1SWXuRSngxIg=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -329,7 +329,7 @@
 </Placemark>
 <Placemark>
   <name>Fork &amp; Dagger Diner</name>
-  <description><![CDATA[<p>Lunch diner with old timey style</p>
+  <description><![CDATA[Lunch diner with old timey style
 <img src="https://lh3.googleusercontent.com/p/AF1QipOdKe5FRxJDfTnRXT7HF89ji0yQysarPDZBVr7L=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -341,7 +341,7 @@
 </Placemark>
 <Placemark>
   <name>Hueys Restaurant</name>
-  <description><![CDATA[<p>River cafe featuring the food of New Orleans with a focus on distinctive seafood dishes &amp; soups.</p>
+  <description><![CDATA[River cafe featuring the food of New Orleans with a focus on distinctive seafood dishes &amp; soups.
 <img src="https://media-cdn.tripadvisor.com/media/photo-s/08/80/70/14/located-above-huey-s.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -353,7 +353,7 @@
 </Placemark>
 <Placemark>
   <name>Saint Bibiana</name>
-  <description><![CDATA[<p>Hotel Bardo; great</p>
+  <description><![CDATA[Hotel Bardo; great
 <img src="https://lede-admin.appetitomagazine.com/wp-content/uploads/sites/53/2023/09/Saint-Bibiana-Rendering.png?w=710" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -365,7 +365,7 @@
 </Placemark>
 <Placemark>
   <name>Bar Bibi</name>
-  <description><![CDATA[<p>Bar associated with Saint Bibiana</p>
+  <description><![CDATA[Bar associated with Saint Bibiana
 <img src="https://static-new.lhw.com/HotelImages/Final/LW2774/lw2774_164453533_370x197.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -377,7 +377,7 @@
 </Placemark>
 <Placemark>
   <name>Strange Bird</name>
-  <description><![CDATA[<p>From owners of Farm. Is restaurant in old diner car</p>
+  <description><![CDATA[From owners of Farm. Is restaurant in old diner car
 <img src="https://images.squarespace-cdn.com/content/v1/64a073ebf34ed93ec4021183/1689893531483-AJH6WVQPOYVYQOOTM982/SV+Images+Strangebird-1+-+website.jpg?format=750w" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -389,7 +389,7 @@
 </Placemark>
 <Placemark>
   <name>La Scala</name>
-  <description><![CDATA[<p>Italian in neighborhood of Common Thread - CLOSED</p>
+  <description><![CDATA[Italian in neighborhood of Common Thread - CLOSED
 <img src="https://images.squarespace-cdn.com/content/v1/59ff316018b27d02417da3bb/1540171909070-EF3BAGCCNSWGG6TS3HX4/LaScala_Night2_01.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -412,7 +412,7 @@
 </Placemark>
 <Placemark>
   <name>Brochus</name>
-  <description><![CDATA[<p>Hipster chicken and good looking coctails</p>
+  <description><![CDATA[Hipster chicken and good looking coctails
 <img src="https://thevendry.com/cdn-cgi/image/width=3840,quality=75,fit=contain,metadata=none,format=auto/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fuploads.thevendry.co%2F36209%2F1708454609217_2023-06-22.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -424,7 +424,7 @@
 </Placemark>
 <Placemark>
   <name>The Vault Kitchen and Market</name>
-  <description><![CDATA[<p>Asian fusion casual restaurant in bank building in Starland area</p>
+  <description><![CDATA[Asian fusion casual restaurant in bank building in Starland area
 <img src="https://static.spotapps.co/spots/7d/6cc9495b0745cea70942348f0172dc/medium" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -436,7 +436,7 @@
 </Placemark>
 <Placemark>
   <name>Ukiyo</name>
-  <description><![CDATA[<p>Sushi and Japanese restaurant in cool Starland area</p>
+  <description><![CDATA[Sushi and Japanese restaurant in cool Starland area
 <img src="https://images.otstatic.com/prod1/48204081/3/huge.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -448,7 +448,7 @@
 </Placemark>
 <Placemark>
   <name>Water Witch Tiki</name>
-  <description><![CDATA[<p>Pretty cool Tiki bar right in Starland area</p>
+  <description><![CDATA[Pretty cool Tiki bar right in Starland area
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThoVN5084zK3FdJMQX6kqwy_onIo__GfRPhQ&amp;s" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -460,7 +460,7 @@
 </Placemark>
 <Placemark>
   <name>Etang Chinese Restaurant</name>
-  <description><![CDATA[<p>Looks like classic chinese food place</p>
+  <description><![CDATA[Looks like classic chinese food place
 <img src="https://lh3.googleusercontent.com/p/AF1QipP-PBe_VXmMu8BFW4i0Fy2hXk__v6F1dZ4ja4RE=s1360-w1360-h1020" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -472,7 +472,7 @@
 </Placemark>
 <Placemark>
   <name>Stone and Webster Chophouse</name>
-  <description><![CDATA[<p>Expensive steakhouse in JW Marriott Savannah</p>
+  <description><![CDATA[Expensive steakhouse in JW Marriott Savannah
 <img src="https://resizer.otstatic.com/v2/photos/wide-xlarge/2/47069931.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -485,7 +485,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Graffito</name>
-  <description><![CDATA[<p>Pizza / Italian in JW Marriott Savannah</p>
+  <description><![CDATA[Pizza / Italian in JW Marriott Savannah
 <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/84/cd/8c/graffito.jpg?w=900&amp;h=500&amp;s=1" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -497,7 +497,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Flora and Fauna</name>
-  <description><![CDATA[<p>New hip looking restaurant / supper club in Starland area</p>
+  <description><![CDATA[New hip looking restaurant / supper club in Starland area
 <img src="https://spicymelonblog.com/wp-content/uploads/2024/06/0BF8545B-94D6-48DC-A109-DC3E454C9AF5-1024x1024.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -509,7 +509,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Veratina</name>
-  <description><![CDATA[<p>Brand new italian restaurant.  Not yet fully up and running, but looks good</p>]]></description>
+  <description><![CDATA[Brand new italian restaurant.  Not yet fully up and running, but looks good]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
     <SimpleData name="Address">606 Abercorn St, Savannah, GA 31401</SimpleData>
@@ -520,7 +520,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Wiley&apos;s Championship BBQ</name>
-  <description><![CDATA[<p>Sav BBQ restaurant, featured on Jully</p>
+  <description><![CDATA[Sav BBQ restaurant, featured on Jully
 <img src="https://lh5.googleusercontent.com/p/AF1QipMBRLcXcXSfD5cRRo4Ic_M3bd5s3Ev3GyyT_c3F=w408-h270-k-no" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -532,7 +532,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Municipal Grand</name>
-  <description><![CDATA[<p>Hotel bar run by Death &amp; Company people.  Unclear if open</p>
+  <description><![CDATA[Hotel bar run by Death &amp; Company people.  Unclear if open
 <img src="https://platform.carolinas.eater.com/wp-content/uploads/sites/11/chorus/uploads/chorus_asset/file/25360307/Municipal_Grand_Lobby__credit__AAmp_Studio_.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=750" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -544,7 +544,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Public Kitchen and Restaurant</name>
-  <description><![CDATA[<p>Small cute restaurant.  Good and in center of town</p>
+  <description><![CDATA[Small cute restaurant.  Good and in center of town
 <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWKn9aA8Am5B6DaDGajfO-dmVV510IvQb42B_xunUEqveBDMdPWrrgn1TZOwZ4pWZ0eDhSQ1PPNFjLQB12WnZl_lIB2y2BFyJeAMKRESHh9xfEhz15zhfNQIioX2XniFSiw4KL=w426-h240-k-no" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -556,7 +556,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Sunday Sunday</name>
-  <description><![CDATA[<p>&quot;Vietnamese classics with thoughtful American and French influences—highlighting fresh herbs, rich flavors, and seasonal ingredients. &quot;</p>
+  <description><![CDATA[&quot;Vietnamese classics with thoughtful American and French influences—highlighting fresh herbs, rich flavors, and seasonal ingredients. &quot;
 <img src="https://eatitandlikeit.com/wp-content/uploads/2025/05/IMG_1277-3.jpeg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -568,7 +568,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Madame Butterfly</name>
-  <description><![CDATA[<p>Korean BBQ</p>
+  <description><![CDATA[Korean BBQ
 <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/5f/f4/19/classy-all-day-spot-come.jpg?w=900&amp;h=500&amp;s=1" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -580,7 +580,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Lucia Pasta Bar</name>
-  <description><![CDATA[<p>Pasta and Italian in Starland</p>
+  <description><![CDATA[Pasta and Italian in Starland
 <img src="https://www.savannahnow.com/gcdn/authoring/authoring-images/2025/08/15/NSMN/85678668007-081425-lucia-pasta-bar-rb-18.jpg?width=700&amp;height=467&amp;fit=crop&amp;format=pjpg&amp;auto=webp" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -592,7 +592,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Pendant Rooftop Bar</name>
-  <description><![CDATA[<p>Rooftop bar right near river in Drayton Hotel</p>
+  <description><![CDATA[Rooftop bar right near river in Drayton Hotel
 <img src="https://platform.carolinas.eater.com/wp-content/uploads/sites/11/2022/03/Pendant-101.jpg?quality=90&amp;strip=all&amp;crop=0%2C0.004355021339606%2C100%2C99.991289957321&amp;w=750" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -604,7 +604,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Abe&apos;s on Lincoln</name>
-  <description><![CDATA[<p>Total dive bar with pictures hanging.  Looks like a mess</p>
+  <description><![CDATA[Total dive bar with pictures hanging.  Looks like a mess
 <img src="https://visitsavannah.com/sites/default/files/styles/video_player_poster/public/listing_images/savannah-LSS-Abe-s-on-Lincoln-Savannah_5CA8F04E-94CF-4380-9A41AD2C1A54CB3D_0954b579-c98c-4f87-ae829714ece60c56.jpg?itok=eK5rS282" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -616,7 +616,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Over Yonder</name>
-  <description><![CDATA[<p>Hipster bar with live music and food in the back of Moodright&apos;s</p>
+  <description><![CDATA[Hipster bar with live music and food in the back of Moodright&apos;s
 <img src="https://www.savannahnow.com/gcdn/presto/2021/06/14/NSMN/93b7370a-533b-41ff-b74c-1969d305d011-061221_2_Over_Yonder.jpg?crop=2063,1161,x0,y104&amp;width=2063&amp;height=1161&amp;format=pjpg&amp;auto=webp" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -628,7 +628,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Moodright’s</name>
-  <description><![CDATA[<p>Divey bar in Starland.  With billards, duckpin bowling, darts. Over Yonder is in the back.</p>
+  <description><![CDATA[Divey bar in Starland.  With billards, duckpin bowling, darts. Over Yonder is in the back.
 <img src="https://lh3.googleusercontent.com/p/AF1QipM77jLRDr_Qzdg9aYZtNsivtYO6OZXRS5q_Y67H=w289-h312-n-k-no" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -640,7 +640,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Lone Wolf Lounge</name>
-  <description><![CDATA[<p>Divey hipster cocktail bar in Starland Area.  Very cool drinks, and very divey feel.</p>
+  <description><![CDATA[Divey hipster cocktail bar in Starland Area.  Very cool drinks, and very divey feel.
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvSIR9L0j1S-3exEmm2FdDw_PdJN9qKnWvYg&amp;s" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Bar</SimpleData>
@@ -652,7 +652,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Green Truck Pub</name>
-  <description><![CDATA[<p>Hipster pub in Starland</p>
+  <description><![CDATA[Hipster pub in Starland
 <img src="https://images.squarespace-cdn.com/content/v1/574883cc60b5e9b0a76eb03f/1597158312191-BM263GX164LZH7KBLXQH/truck_parked_outside_restaurant.jpg?format=1500w" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>
@@ -664,7 +664,7 @@ Savannah, GA 31401</SimpleData>
 </Placemark>
 <Placemark>
   <name>Crystal Beer Parlor</name>
-  <description><![CDATA[<p>Feels like a college town restaurant and bar.  Sandwiches and mains.  A huge bar, with a fun feel</p>
+  <description><![CDATA[Feels like a college town restaurant and bar.  Sandwiches and mains.  A huge bar, with a fun feel
 <img src="https://roadfood.com/wp-content/uploads/2019/09/Crystal-Beer-int.jpg" width="300" />]]></description>
   <ExtendedData><SchemaData schemaUrl="#restaurant_schema">
     <SimpleData name="Category">Restaurant</SimpleData>

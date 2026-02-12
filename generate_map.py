@@ -482,7 +482,7 @@ def generate_kml(restaurants: list[dict], output_path: str = "map.kml"):
         # description = summary text, then photo as <img> on its own line
         desc_parts = []
         if r.get("summary"):
-            desc_parts.append(f'<p>{esc(r["summary"])}</p>')
+            desc_parts.append(esc(r["summary"]))
         if r.get("photo_url"):
             desc_parts.append(f'<img src="{esc(r["photo_url"])}" width="300" />')
         description = "\n".join(desc_parts)
