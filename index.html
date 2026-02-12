@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Savannah Restaurant Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  #map { width: 100vw; height: 100vh; }
+
+  .legend {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .legend h4 {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  .legend-item.hidden {
+    opacity: 0.35;
+  }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .custom-popup .leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .custom-popup .leaflet-popup-content {
+    margin: 0;
+    min-width: 240px;
+    max-width: 300px;
+  }
+  .popup-photo {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  .popup-body {
+    padding: 12px 14px;
+  }
+  .popup-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
+  }
+  .popup-type {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .popup-summary {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .popup-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1a73e8;
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  .popup-nav:hover { background: #1557b0; }
+
+  .marker-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 2px solid white;
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const RESTAURANTS = [
+  {
+    "name": "Flock to the Walk",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Chinese place with cool bar downstairs: Peacock Lounge",
+    "address": "37 Whitaker St, Savannah, GA 31401",
+    "photo_url": "https://images.otstatic.com/prod1/48226028/2/huge.jpg",
+    "lat": 32.0797179,
+    "lng": -81.092964
+  },
+  {
+    "name": "Peacock Lounge",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Super cool speakeasy below Flock to the Walk",
+    "address": "37 Whitaker St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipOTNnh7NA13EDJUawugP31zFDAl7i6J4p14gahU=s1360-w1360-h1020",
+    "lat": 32.0797179,
+    "lng": -81.092964
+  },
+  {
+    "name": "The Olde Pink House",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "",
+    "address": "23 Abercorn St, Savannah, GA 31401",
+    "photo_url": "https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-4829-555460_489790621037444_2070619977_n0-1c941d915056a36_1c941ecc-5056-a36a-084fb0a35651bbc6.jpg?itok=HM_jmFRR",
+    "lat": 32.0790722,
+    "lng": -81.0888948
+  },
+  {
+    "name": "Starland Yard",
+    "type": "Food Hall",
+    "category": "other",
+    "summary": "Hipster food truck area.  Awesome pizza",
+    "address": "2411 De Soto Ave, Savannah, GA 31401",
+    "photo_url": "https://www.southmag.com/wp-content/uploads/data-import/93eba150/starland20tour20pic.jpg",
+    "lat": 32.0546107,
+    "lng": -81.1020516
+  },
+  {
+    "name": "Bella's Italian Cafe",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Classic family italian",
+    "address": "4420 Habersham St, Savannah, GA 31405",
+    "photo_url": "",
+    "lat": 32.0375539,
+    "lng": -81.1023068
+  },
+  {
+    "name": "The Wyld",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Dock bar with views and drinks",
+    "address": "2740 Livingston Ave, Savannah, GA 31406",
+    "photo_url": "https://wandernorthgeorgia.com/wp-content/uploads/2021/05/blog_photo_wyld_content-5.jpg",
+    "lat": 32.0043,
+    "lng": -81.0477
+  },
+  {
+    "name": "Auspicious Baking Company",
+    "type": "Bakery?",
+    "category": "other",
+    "summary": "",
+    "address": "7360 Skidaway Rd, Savannah, GA 31406",
+    "photo_url": "https://media1.fdncms.com/connectsavannah/imager/u/original/14669385/food--auspicious-1.jpg",
+    "lat": 31.9871216,
+    "lng": -81.0745131
+  },
+  {
+    "name": "Collins Quarter",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "",
+    "address": "151 Bull St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipN2SPbVQ2O12YEPQPOcuAaj7av7lDpa5iMxKW-u=s1360-w1360-h1020",
+    "lat": 32.0771632,
+    "lng": -81.0927836
+  },
+  {
+    "name": "The Grey",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Very highly rated foodie restaurant.  Prix Fixe menu...",
+    "address": "109 Martin Luther King Jr Blvd, Savannah, GA 31401",
+    "photo_url": "https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-4809-11741146_428013827402355_2089844345582728489_o0-1b927f445056a36_1b928073-5056-a36a-08ac9277c63d7751.jpg?itok=kGoWjHsn",
+    "lat": 32.0798455,
+    "lng": -81.0977728
+  },
+  {
+    "name": "Alligator Soul",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "",
+    "address": "114 Barnard St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipM8nFZIIyTUNtyU3cSFSzpkZqzp7d6IFcGUQng7=s1360-w1360-h1020",
+    "lat": 32.0712088,
+    "lng": -81.09732
+  },
+  {
+    "name": "Common Thread",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "From owners of Farm, foodie restaurant in an old home",
+    "address": "122 E 37th St, Savannah, GA 31401",
+    "photo_url": "https://visitsavannah.com/sites/default/files/styles/listing/public/profiles/photos/listing-14586-DSC04405_FE1665A8-4515-4320-8844212111AB2C05_c5916286-c788-4983-be7342fed88b2308.jpg?itok=08kjsdfy",
+    "lat": 32.0566375,
+    "lng": -81.0986909
+  },
+  {
+    "name": "Bar Julian",
+    "type": "Rooftop Bar",
+    "category": "rooftop",
+    "summary": "Upscale bar on the roof at the Thompson hotel",
+    "address": "201 Port St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipOSM6BaqcbLDLIppFOE0zXRAifI9bi15IBQ95Wy=s1360-w1360-h1020",
+    "lat": 32.0773535,
+    "lng": -81.0791516
+  },
+  {
+    "name": "Fleeting",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Excellent micheln level food in Thompson Hotel",
+    "address": "201 Port St, Savannah, GA 31401",
+    "photo_url": "https://eatitandlikeit.com/wp-content/uploads/2021/09/Screen-Shot-2021-09-29-at-3.16.55-PM-1.jpeg",
+    "lat": 32.0773535,
+    "lng": -81.0791516
+  },
+  {
+    "name": "Cotton and Rye",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Good food South of Forsyth Park",
+    "address": "1801 Habersham St, Savannah, GA 31401",
+    "photo_url": "https://image.resy.com/3/003/2/3686/7c955fe10112bcb93e68e40d43823a6e848d0684/jpg/1:1/1600",
+    "lat": 32.058381,
+    "lng": -81.094919
+  },
+  {
+    "name": "Alley Cat",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Super cool underground bar.  Awesome menu",
+    "address": "207 W Broughton Ln, Savannah, GA 31401",
+    "photo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmPpnb7V1bYA2lUNtgIwCrgzceiajDFzm6AA&usqp=CAU",
+    "lat": 32.079318,
+    "lng": -81.0944785
+  },
+  {
+    "name": "The Ordinary",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Rebecca went with Sebrina; terrible",
+    "address": "217 1/2 W Broughton St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipMn1wGxIQpPmbsnsCfjh63cF8lN6sJBtMBd2pgs=s1360-w1360-h1020",
+    "lat": 32.0796527,
+    "lng": -81.0946137
+  },
+  {
+    "name": "The Lost Square",
+    "type": "Rooftop Bar",
+    "category": "rooftop",
+    "summary": "Rooftop bar at Alida hotel.  Fancy",
+    "address": "412 Williamson St, Savannah, GA 31401",
+    "photo_url": "https://media-cdn.tripadvisor.com/media/photo-s/1b/1a/6a/59/the-lost-square.jpg",
+    "lat": 32.0830715,
+    "lng": -81.0956592
+  },
+  {
+    "name": "Hop Atomica",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Cool looking funky outside bar and food place.  South of Forsyth",
+    "address": "535 E 39th St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipPSu3ukgUtKclcbib-E11mp68mrCTrrYMhsKoyx=s1360-w1360-h1020",
+    "lat": 32.0537483,
+    "lng": -81.094669
+  },
+  {
+    "name": "Foxy Loxy Cafe",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Mexican Tacos and coffee.  Way south of Forsyth Park",
+    "address": "1919 Bull St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipNbZLkj7CgPpCR-hyKxKpCyHfr6PqhUFLQoY3Bc=s1360-w1360-h1020",
+    "lat": 32.0583788,
+    "lng": -81.1000687
+  },
+  {
+    "name": "Java Burrito Company",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Fresh version of chipotle.  Great lunch option",
+    "address": "420 E Broughton St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipOz1wOlPfZgIuMNTlUuTQtxer35jcsfX65yLGdW=s1360-w1360-h1020",
+    "lat": 32.0778093,
+    "lng": -81.0872978
+  },
+  {
+    "name": "Arco Lounge",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Cool hip looking dinner and bar.  Small menu, great drinks, and awesome decor and views",
+    "address": "42 E Bay St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipNByK-gN-95NWg8CoL0rZ-GYgfCI-OE-4c4jkzc=s1360-w1360-h1020",
+    "lat": 32.080929,
+    "lng": -81.0909356
+  },
+  {
+    "name": "Savoy Society",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Super hip looking bar with some little food",
+    "address": "102 E Liberty #109, Savannah, GA 31401\n",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipM2wIBI3ctEe6R7M-1qImT1pC2VbIXt4ZskC3t0=s1360-w1360-h1020",
+    "lat": 32.0768,
+    "lng": -81.0918
+  },
+  {
+    "name": "Peregrin Rooftop Bar",
+    "type": "Rooftop Bar",
+    "category": "rooftop",
+    "summary": "Bar on top of Perry Lane hotel.  Really cool roof with views",
+    "address": "257 E Perry St, Savannah, GA 31401",
+    "photo_url": "https://www.godsavethepoints.com/wp-content/uploads/2022/09/savlc-peregrin-rooftop-2697-hor-wide.webp",
+    "lat": 32.0749925,
+    "lng": -81.0916936
+  },
+  {
+    "name": "Wayward",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Also in the Perry Lane Hotel, just not on the roof",
+    "address": "257 E Perry St, Savannah, GA 31401",
+    "photo_url": "https://d3qpqomdjdty0i.cloudfront.net/perrylanehotel.com-1565220108/cms/cache/v2/5b464a73d34ee.jpg/1920x1080/fit/80/d80cf9720efc4f14f80385f0f34f231c.jpg",
+    "lat": 32.0749925,
+    "lng": -81.0916936
+  },
+  {
+    "name": "Artillery Bar",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Went with Elizabeth and David; really good ",
+    "address": "307 Bull St, Savannah, GA 31401",
+    "photo_url": "https://static.wixstatic.com/media/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg/v1/fill/w_250,h_163,al_c,q_90,enc_auto/5e1d09_e721660e6dda42f8abc5afe589fff06d~mv2.jpg",
+    "lat": 32.0744548,
+    "lng": -81.0937527
+  },
+  {
+    "name": "District Smokehouse",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "In Plant Riverside, BBQ place.  Is along the water, very casual outdoor bar/restaurant",
+    "address": "500 W River St, Savannah, GA 31401",
+    "photo_url": "https://s3-media0.fl.yelpcdn.com/bphoto/-aLbxD6yFxZjI_AxtYqAAw/o.jpg",
+    "lat": 32.0809082,
+    "lng": -81.088401
+  },
+  {
+    "name": "Olympia Cafe",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Looks like riverfront diner.  Skip it",
+    "address": "5 E River St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipP_gWt2qRqVcgt4vWuu3oBYQoQv1SWXuRSngxIg=s1360-w1360-h1020",
+    "lat": 32.0815377,
+    "lng": -81.0908655
+  },
+  {
+    "name": "Fork & Dagger Diner",
+    "type": "Lunch",
+    "category": "restaurant",
+    "summary": "Lunch diner with old timey style",
+    "address": "1402 Habersham St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipOdKe5FRxJDfTnRXT7HF89ji0yQysarPDZBVr7L=s1360-w1360-h1020",
+    "lat": 32.060955,
+    "lng": -81.093824
+  },
+  {
+    "name": "Hueys Restaurant",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "River cafe featuring the food of New Orleans with a focus on distinctive seafood dishes & soups.",
+    "address": "115 E River St, Savannah, GA 31401",
+    "photo_url": "https://media-cdn.tripadvisor.com/media/photo-s/08/80/70/14/located-above-huey-s.jpg",
+    "lat": 32.0810175,
+    "lng": -81.0894118
+  },
+  {
+    "name": "Saint Bibiana",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Hotel Bardo; great",
+    "address": "700 Drayton St, Savannah, GA 31401",
+    "photo_url": "https://lede-admin.appetitomagazine.com/wp-content/uploads/sites/53/2023/09/Saint-Bibiana-Rendering.png?w=710",
+    "lat": 32.0673201,
+    "lng": -81.0946573
+  },
+  {
+    "name": "Bar Bibi",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Bar associated with Saint Bibiana",
+    "address": "700 Drayton St, Savannah, GA 31401",
+    "photo_url": "https://static-new.lhw.com/HotelImages/Final/LW2774/lw2774_164453533_370x197.jpg",
+    "lat": 32.0673201,
+    "lng": -81.0946573
+  },
+  {
+    "name": "Strange Bird",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "From owners of Farm. Is restaurant in old diner car",
+    "address": "1220 Barnard St, Savannah, GA 31401",
+    "photo_url": "https://images.squarespace-cdn.com/content/v1/64a073ebf34ed93ec4021183/1689893531483-AJH6WVQPOYVYQOOTM982/SV+Images+Strangebird-1+-+website.jpg?format=750w",
+    "lat": 32.0639285,
+    "lng": -81.0996994
+  },
+  {
+    "name": "La Scala",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Italian in neighborhood of Common Thread - CLOSED",
+    "address": "119 E 37th St, Savannah, GA 31401",
+    "photo_url": "https://images.squarespace-cdn.com/content/v1/59ff316018b27d02417da3bb/1540171909070-EF3BAGCCNSWGG6TS3HX4/LaScala_Night2_01.jpg",
+    "lat": 32.0563508,
+    "lng": -81.0982727
+  },
+  {
+    "name": "Elizabeth's ",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "",
+    "address": "105 E 37th St, Savannah, GA 31401",
+    "photo_url": "",
+    "lat": 32.0564079,
+    "lng": -81.0988362
+  },
+  {
+    "name": "Brochus",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Hipster chicken and good looking coctails",
+    "address": "2400 Bull St Suite 8, Savannah, GA 31401",
+    "photo_url": "https://thevendry.com/cdn-cgi/image/width=3840,quality=75,fit=contain,metadata=none,format=auto/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fuploads.thevendry.co%2F36209%2F1708454609217_2023-06-22.jpg",
+    "lat": 32.0539,
+    "lng": -81.1
+  },
+  {
+    "name": "The Vault Kitchen and Market",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Asian fusion casual restaurant in bank building in Starland area",
+    "address": "2112 Bull St, Savannah, GA 31401",
+    "photo_url": "https://static.spotapps.co/spots/7d/6cc9495b0745cea70942348f0172dc/medium",
+    "lat": 32.0563231,
+    "lng": -81.100355
+  },
+  {
+    "name": "Ukiyo",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Sushi and Japanese restaurant in cool Starland area",
+    "address": "2224 Bull St, Savannah, GA 31401",
+    "photo_url": "https://images.otstatic.com/prod1/48204081/3/huge.jpg",
+    "lat": 32.0559488,
+    "lng": -81.1006292
+  },
+  {
+    "name": "Water Witch Tiki",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Pretty cool Tiki bar right in Starland area",
+    "address": "2220 Bull St, Savannah, GA 31401",
+    "photo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThoVN5084zK3FdJMQX6kqwy_onIo__GfRPhQ&s",
+    "lat": 32.0559648,
+    "lng": -81.1006232
+  },
+  {
+    "name": "Etang Chinese Restaurant",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Looks like classic chinese food place",
+    "address": "513 E Oglethorpe Ave STE H, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipP-PBe_VXmMu8BFW4i0Fy2hXk__v6F1dZ4ja4RE=s1360-w1360-h1020",
+    "lat": 32.074,
+    "lng": -81.0843
+  },
+  {
+    "name": "Stone and Webster Chophouse",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Expensive steakhouse in JW Marriott Savannah",
+    "address": "400 W. River Street\nSavannah, GA 31401",
+    "photo_url": "https://resizer.otstatic.com/v2/photos/wide-xlarge/2/47069931.jpg",
+    "lat": 32.0834761,
+    "lng": -81.0954349
+  },
+  {
+    "name": "Graffito",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Pizza / Italian in JW Marriott Savannah",
+    "address": "500 W River St, Savannah, GA 31401",
+    "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/84/cd/8c/graffito.jpg?w=900&h=500&s=1",
+    "lat": 32.0809082,
+    "lng": -81.088401
+  },
+  {
+    "name": "Flora and Fauna",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "New hip looking restaurant / supper club in Starland area",
+    "address": "2401 Bull Street, Savannah, GA 31401",
+    "photo_url": "https://spicymelonblog.com/wp-content/uploads/2024/06/0BF8545B-94D6-48DC-A109-DC3E454C9AF5-1024x1024.jpg",
+    "lat": 32.054562,
+    "lng": -81.101376
+  },
+  {
+    "name": "Veratina",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Brand new italian restaurant.  Not yet fully up and running, but looks good",
+    "address": "606 Abercorn St, Savannah, GA 31401",
+    "photo_url": "",
+    "lat": 32.068387,
+    "lng": -81.093325
+  },
+  {
+    "name": "Wiley's Championship BBQ",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Sav BBQ restaurant, featured on Jully",
+    "address": "4700 US-80, Savannah, GA 31410",
+    "photo_url": "https://lh5.googleusercontent.com/p/AF1QipMBRLcXcXSfD5cRRo4Ic_M3bd5s3Ev3GyyT_c3F=w408-h270-k-no",
+    "lat": 32.0385669,
+    "lng": -81.0597123
+  },
+  {
+    "name": "Municipal Grand",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Hotel bar run by Death & Company people.  Unclear if open",
+    "address": "132 E Broughton St, Savannah, GA 31401",
+    "photo_url": "https://platform.carolinas.eater.com/wp-content/uploads/sites/11/chorus/uploads/chorus_asset/file/25360307/Municipal_Grand_Lobby__credit__AAmp_Studio_.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=750",
+    "lat": 32.0786481,
+    "lng": -81.0903817
+  },
+  {
+    "name": "Public Kitchen and Restaurant",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Small cute restaurant.  Good and in center of town",
+    "address": "1 W Liberty St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrWKn9aA8Am5B6DaDGajfO-dmVV510IvQb42B_xunUEqveBDMdPWrrgn1TZOwZ4pWZ0eDhSQ1PPNFjLQB12WnZl_lIB2y2BFyJeAMKRESHh9xfEhz15zhfNQIioX2XniFSiw4KL=w426-h240-k-no",
+    "lat": 32.0745355,
+    "lng": -81.0937352
+  },
+  {
+    "name": "Sunday Sunday",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "\"Vietnamese classics with thoughtful American and French influences\u2014highlighting fresh herbs, rich flavors, and seasonal ingredients. \"",
+    "address": "116 Whitaker St, Savannah, GA 31401",
+    "photo_url": "https://eatitandlikeit.com/wp-content/uploads/2025/05/IMG_1277-3.jpeg",
+    "lat": 32.0777456,
+    "lng": -81.0935157
+  },
+  {
+    "name": "Madame Butterfly",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Korean BBQ",
+    "address": "110 W Congress St, Savannah, GA 31401",
+    "photo_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/5f/f4/19/classy-all-day-spot-come.jpg?w=900&h=500&s=1",
+    "lat": 32.0800439,
+    "lng": -81.0929387
+  },
+  {
+    "name": "Lucia Pasta Bar",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Pasta and Italian in Starland",
+    "address": "2425 Bull St, Savannah, GA 31401",
+    "photo_url": "https://www.savannahnow.com/gcdn/authoring/authoring-images/2025/08/15/NSMN/85678668007-081425-lucia-pasta-bar-rb-18.jpg?width=700&height=467&fit=crop&format=pjpg&auto=webp",
+    "lat": 32.0542233,
+    "lng": -81.1015081
+  },
+  {
+    "name": "Pendant Rooftop Bar",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Rooftop bar right near river in Drayton Hotel",
+    "address": "7 Drayton St, Savannah, GA, 31401",
+    "photo_url": "https://platform.carolinas.eater.com/wp-content/uploads/sites/11/2022/03/Pendant-101.jpg?quality=90&strip=all&crop=0%2C0.004355021339606%2C100%2C99.991289957321&w=750",
+    "lat": 32.0804135,
+    "lng": -81.0902776
+  },
+  {
+    "name": "Abe's on Lincoln",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Total dive bar with pictures hanging.  Looks like a mess",
+    "address": "17 Lincoln St, Savannah, GA, 31401",
+    "photo_url": "https://visitsavannah.com/sites/default/files/styles/video_player_poster/public/listing_images/savannah-LSS-Abe-s-on-Lincoln-Savannah_5CA8F04E-94CF-4380-9A41AD2C1A54CB3D_0954b579-c98c-4f87-ae829714ece60c56.jpg?itok=eK5rS282",
+    "lat": 32.079461,
+    "lng": -81.088109
+  },
+  {
+    "name": "Over Yonder",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Hipster bar with live music and food in the back of Moodright's",
+    "address": "2424 Abercorn St, Savannah, GA, 31401",
+    "photo_url": "https://www.savannahnow.com/gcdn/presto/2021/06/14/NSMN/93b7370a-533b-41ff-b74c-1969d305d011-061221_2_Over_Yonder.jpg?crop=2063,1161,x0,y104&width=2063&height=1161&format=pjpg&auto=webp",
+    "lat": 32.053754,
+    "lng": -81.0988079
+  },
+  {
+    "name": "Moodright\u2019s",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Divey bar in Starland.  With billards, duckpin bowling, darts. Over Yonder is in the back.",
+    "address": "2424 Abercorn St, Savannah, GA 31401",
+    "photo_url": "https://lh3.googleusercontent.com/p/AF1QipM77jLRDr_Qzdg9aYZtNsivtYO6OZXRS5q_Y67H=w289-h312-n-k-no",
+    "lat": 32.053754,
+    "lng": -81.0988079
+  },
+  {
+    "name": "Lone Wolf Lounge",
+    "type": "Bar",
+    "category": "bar",
+    "summary": "Divey hipster cocktail bar in Starland Area.  Very cool drinks, and very divey feel.",
+    "address": "2429 Lincoln St, Savannah, GA 31401",
+    "photo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvSIR9L0j1S-3exEmm2FdDw_PdJN9qKnWvYg&s",
+    "lat": 32.052538,
+    "lng": -81.0982768
+  },
+  {
+    "name": "Green Truck Pub",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Hipster pub in Starland",
+    "address": "2430 Habersham St, Savannah, GA 31401",
+    "photo_url": "https://images.squarespace-cdn.com/content/v1/574883cc60b5e9b0a76eb03f/1597158312191-BM263GX164LZH7KBLXQH/truck_parked_outside_restaurant.jpg?format=1500w",
+    "lat": 32.0528776,
+    "lng": -81.0967534
+  },
+  {
+    "name": "Crystal Beer Parlor",
+    "type": "Restaurant",
+    "category": "restaurant",
+    "summary": "Feels like a college town restaurant and bar.  Sandwiches and mains.  A huge bar, with a fun feel",
+    "address": "301 W Jones St, Savannah, GA 31401",
+    "photo_url": "https://roadfood.com/wp-content/uploads/2019/09/Crystal-Beer-int.jpg",
+    "lat": 32.073561,
+    "lng": -81.097845
+  }
+];
+const CATEGORIES = {
+  "restaurant": {
+    "label": "Restaurant",
+    "color": "#C62828",
+    "icon": "utensils"
+  },
+  "bar": {
+    "label": "Bar",
+    "color": "#1565C0",
+    "icon": "wine-glass-alt"
+  },
+  "rooftop": {
+    "label": "Rooftop Bar",
+    "color": "#0097A7",
+    "icon": "cocktail"
+  },
+  "other": {
+    "label": "Other",
+    "color": "#2E7D32",
+    "icon": "store"
+  }
+};
+
+// Initialize map centered on Savannah
+const map = L.map('map', {
+  zoomControl: true,
+  attributionControl: false
+}).setView([32.0809, -81.0912], 13);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+}).addTo(map);
+
+// Create layer groups per category
+const layerGroups = {};
+Object.keys(CATEGORIES).forEach(k => {
+  layerGroups[k] = L.layerGroup().addTo(map);
+});
+
+// Custom icon factory
+function makeIcon(cat) {
+  const cfg = CATEGORIES[cat] || CATEGORIES['other'];
+  const div = document.createElement('div');
+  return L.divIcon({
+    className: '',
+    html: `<div class="marker-icon" style="background:${cfg.color};width:32px;height:32px;">
+             <i class="fas fa-${cfg.icon}"></i>
+           </div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -18]
+  });
+}
+
+// Add markers
+RESTAURANTS.forEach(r => {
+  const cfg = CATEGORIES[r.category] || CATEGORIES['other'];
+  const gmapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(r.address);
+
+  let photoHtml = '';
+  if (r.photo_url) {
+    photoHtml = `<img class="popup-photo" src="${r.photo_url}" alt="${r.name}" onerror="this.style.display='none'" />`;
+  }
+
+  let summaryHtml = '';
+  if (r.summary) {
+    summaryHtml = `<div class="popup-summary">${r.summary}</div>`;
+  }
+
+  const popup = `
+    ${photoHtml}
+    <div class="popup-body">
+      <div class="popup-name">${r.name}</div>
+      <span class="popup-type" style="background:${cfg.color}">${r.type || cfg.label}</span>
+      ${summaryHtml}
+      <a class="popup-nav" href="${gmapsUrl}" target="_blank">
+        <i class="fas fa-directions"></i> Open in Google Maps
+      </a>
+    </div>
+  `;
+
+  const marker = L.marker([r.lat, r.lng], { icon: makeIcon(r.category) })
+    .bindPopup(popup, { className: 'custom-popup', maxWidth: 300 });
+
+  layerGroups[r.category].addLayer(marker);
+});
+
+// Legend with toggle
+const legend = L.control({ position: 'bottomright' });
+legend.onAdd = function() {
+  const div = L.DomUtil.create('div', 'legend');
+  div.innerHTML = '<h4>Savannah Eats & Drinks</h4>';
+
+  Object.entries(CATEGORIES).forEach(([key, cfg]) => {
+    const count = RESTAURANTS.filter(r => r.category === key).length;
+    if (count === 0) return;
+    const item = document.createElement('div');
+    item.className = 'legend-item';
+    item.innerHTML = `<span class="legend-dot" style="background:${cfg.color}"></span> ${cfg.label} (${count})`;
+    item.addEventListener('click', () => {
+      if (map.hasLayer(layerGroups[key])) {
+        map.removeLayer(layerGroups[key]);
+        item.classList.add('hidden');
+      } else {
+        map.addLayer(layerGroups[key]);
+        item.classList.remove('hidden');
+      }
+    });
+    div.appendChild(item);
+  });
+
+  L.DomUtil.disableClickPropagation(div);
+  return div;
+};
+legend.addTo(map);
+
+// Fit bounds to all markers
+const allCoords = RESTAURANTS.map(r => [r.lat, r.lng]);
+if (allCoords.length) {
+  map.fitBounds(allCoords, { padding: [30, 30] });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+name: Update Restaurant Map
+
+on:
+  schedule:
+    # Run daily at 8 AM ET (1 PM UTC)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    # Allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate map
+        env:
+          GOOGLE_SHEETS_CREDS_JSON: ${{ secrets.GOOGLE_SHEETS_CREDS_JSON }}
+        run: python generate_map.py
+
+      - name: Commit updated map
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html geocode_cache.json
+          git diff --cached --quiet || git commit -m "Auto-update restaurant map $(date -u +%Y-%m-%d)"
+          git push
