@@ -665,7 +665,7 @@ Savannah, GA 31401</SimpleData>
 <img src="https://platform.carolinas.eater.com/wp-content/uploads/sites/11/chorus/uploads/chorus_asset/file/25360307/Municipal_Grand_Lobby__credit__AAmp_Studio_.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=750" width="300" />]]></description>
   <ExtendedData>
     <SchemaData schemaUrl="#restaurant_schema">
-      <SimpleData name="Category">Bar</SimpleData>
+      <SimpleData name="Category">Restaurant</SimpleData>
       <SimpleData name="Address">132 E Broughton St, Savannah, GA 31401</SimpleData>
     </SchemaData>
     <Data name="gx_media_links"><value>https://platform.carolinas.eater.com/wp-content/uploads/sites/11/chorus/uploads/chorus_asset/file/25360307/Municipal_Grand_Lobby__credit__AAmp_Studio_.jpg?quality=90&amp;strip=all&amp;crop=0%2C0%2C100%2C100&amp;w=750</value></Data>
@@ -837,6 +837,51 @@ Savannah, GA 31401</SimpleData>
   </ExtendedData>
   <Point>
     <coordinates>-81.097845,32.073561,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Joe and Vera&apos;s</name>
+  <description><![CDATA[Small sit down bar with good drinks and a really cool intimate atmosphere
+<img src="https://s3-media0.fl.yelpcdn.com/bphoto/wV9UeQx2VA6OXhzgwb6qPQ/348s.jpg" width="300" />]]></description>
+  <ExtendedData>
+    <SchemaData schemaUrl="#restaurant_schema">
+      <SimpleData name="Category">Bar</SimpleData>
+      <SimpleData name="Address">23 W Broughton St, Savannah, GA 31401</SimpleData>
+    </SchemaData>
+    <Data name="gx_media_links"><value>https://s3-media0.fl.yelpcdn.com/bphoto/wV9UeQx2VA6OXhzgwb6qPQ/348s.jpg</value></Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>-81.092927,32.0789617,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Laundry Diner</name>
+  <description><![CDATA[Good looking diner
+<img src="https://viewfromalove.com/wp-content/uploads/the-laundry-diner-review-viewfromalove.jpg" width="300" />]]></description>
+  <ExtendedData>
+    <SchemaData schemaUrl="#restaurant_schema">
+      <SimpleData name="Category">Restaurant</SimpleData>
+      <SimpleData name="Address">1401 Paulsen St, Savannah, GA 31401</SimpleData>
+    </SchemaData>
+    <Data name="gx_media_links"><value>https://viewfromalove.com/wp-content/uploads/the-laundry-diner-review-viewfromalove.jpg</value></Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>-81.085822,32.05897,0</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <name>Paris Baguette</name>
+  <description><![CDATA[Bakery
+<img src="https://www.businessdebut.com/content/images/2025/04/2024_0910_ParisBaguette_DW9_6560-1024x683--1-.jpg" width="300" />]]></description>
+  <ExtendedData>
+    <SchemaData schemaUrl="#restaurant_schema">
+      <SimpleData name="Category">Other</SimpleData>
+      <SimpleData name="Address">24 E Broughton St, Savannah, GA 31401</SimpleData>
+    </SchemaData>
+    <Data name="gx_media_links"><value>https://www.businessdebut.com/content/images/2025/04/2024_0910_ParisBaguette_DW9_6560-1024x683--1-.jpg</value></Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>-81.0909947,32.078966,0</coordinates>
   </Point>
 </Placemark>
 </Document>

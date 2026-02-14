@@ -206,5 +206,17 @@
   "513 E Oglethorpe Ave STE H, Savannah, GA 31401": {
     "lat": 32.074,
     "lng": -81.0843
+  },
+  "23 W Broughton St, Savannah, GA 31401": {
+    "lat": 32.0789617,
+    "lng": -81.092927
+  },
+  "1401 Paulsen St, Savannah, GA 31401": {
+    "lat": 32.05897,
+    "lng": -81.085822
+  },
+  "24 E Broughton St, Savannah, GA 31401": {
+    "lat": 32.078966,
+    "lng": -81.0909947
   }
 }
